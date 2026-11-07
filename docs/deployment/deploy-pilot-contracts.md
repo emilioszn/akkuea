@@ -44,8 +44,8 @@ The pilot also carries a terminal wind-down marker on `pilot-income-token`
 (`mark_wound_down`, admin-only, one-way; `wound_down_status()` to read it),
 mirroring the payout-split exit state so either contract can be read
 independently for a consistent picture. No fund-recovery or unwind logic
-exists in either contract; that question remains open (Known Risk #5 in the
-product brief).
+exists in either contract; decide how your product handles an issuer exit
+before onboarding real investors.
 
 Like `record_evidence` and `execute_distribution`, `exit` requires operator +
 ally auth. **In production, use the pilot webapp's co-signing flow** (operator
@@ -66,7 +66,7 @@ The contracts are immutable (no upgrade entry point); recovering from a
 contract-level bug means migrating to a new deployment, covered in
 [`docs/operations/runbook-pilot-contract-migration.md`](../operations/runbook-pilot-contract-migration.md).
 The reasoning behind both decisions is recorded in
-[`docs/strategy/decision-log.md`](../strategy/decision-log.md).
+[`docs/decisions/decision-log.md`](../decisions/decision-log.md).
 
 Each cycle's evidence carries an on-chain review status, which is what the
 pilot dashboard renders:
@@ -415,4 +415,4 @@ Also add the deployment table to `docs/contracts/deployment.md` with:
 - [`docs/operations/runbook-pilot-admin-rotation.md`](../operations/runbook-pilot-admin-rotation.md)
 - [`docs/operations/runbook-pilot-emergency-pause.md`](../operations/runbook-pilot-emergency-pause.md)
 - [`docs/operations/runbook-pilot-contract-migration.md`](../operations/runbook-pilot-contract-migration.md)
-- [`docs/strategy/decision-log.md`](../strategy/decision-log.md)
+- [`docs/decisions/decision-log.md`](../decisions/decision-log.md)

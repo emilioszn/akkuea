@@ -74,7 +74,7 @@ pub trait Whitelist {
 
 /// Minimal client surface for the Soroswap AMM router (github.com/soroswap/core,
 /// `contracts/router`). Only the single-hop exact-input swap used for settlement
-/// is declared. Verification notes live in docs/strategy/decision-log.md.
+/// is declared. Verification notes live in docs/decisions/decision-log.md.
 #[contractclient(name = "SoroswapRouterClient")]
 pub trait SoroswapRouter {
     fn swap_exact_tokens_for_tokens(
@@ -255,7 +255,7 @@ pub struct ExitRecord {
     /// Free-text reason supplied by the two signing parties. Deliberately a
     /// string rather than an enum or hash-plus-off-chain-link so the dashboard
     /// can render why the exit happened directly from on-chain state (see
-    /// docs/strategy/decision-log.md for the recorded rationale).
+    /// docs/decisions/decision-log.md for the recorded rationale).
     pub reason: String,
     /// Ledger timestamp of the `exit` invocation.
     pub at: u64,
@@ -1147,7 +1147,7 @@ impl PilotPayoutSplit {
     ///
     /// Deliberately gated by the admin alone, not by the operator+ally
     /// two-signer model used for `record_evidence`, `execute_distribution`,
-    /// and `exit`. Reasoning recorded in docs/strategy/decision-log.md: the
+    /// and `exit`. Reasoning recorded in docs/decisions/decision-log.md: the
     /// admin key is the platform's own key, distinct from the operator and
     /// ally business roles, and requiring the ally's co-signature would let
     /// an unresponsive or adversarial ally block the platform's ability to recover

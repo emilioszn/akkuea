@@ -1,6 +1,6 @@
 # Contract Deployment Guide
 
-This guide covers the complete deployment of the Akkuea smart contracts to Stellar/Soroban networks. Read it fully before executing any command - the order of steps is mandatory.
+This guide covers the complete deployment of the `defi-rwa` smart contract to Stellar/Soroban networks. Read it fully before executing any command - the order of steps is mandatory.
 
 **Contract source:** `apps/contracts/contracts/defi-rwa/src/lib.rs`
 **Output WASM:** `apps/contracts/target/wasm32v1-none/release/rwa_defi_contract.wasm`
@@ -14,7 +14,7 @@ This guide covers the complete deployment of the Akkuea smart contracts to Stell
 
 ## Architecture overview
 
-Akkuea deploys a **single WASM binary** that contains both the property tokenization and DeFi lending logic. There are not two separate contracts - there is one contract, one contract ID, one deployment.
+`defi-rwa` is a **single WASM binary** that contains both the property tokenization and DeFi lending logic. There are not two separate contracts - there is one contract, one contract ID, one deployment.
 
 ```
 rwa_defi_contract.wasm

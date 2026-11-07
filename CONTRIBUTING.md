@@ -1,30 +1,27 @@
-# Contributing to Akkuea
+# Contributing to Stellar RWA Kit
 
-Thank you for your interest in contributing to Akkuea. This guide covers everything you need to know to submit high-quality contributions - from forking the repository to getting your pull request merged.
+Thank you for your interest in contributing to Stellar RWA Kit. This guide covers everything you need to know to submit high-quality contributions - from forking the repository to getting your pull request merged.
 
 Please read this document in its entirety before opening your first pull request. Following these standards protects the stability of the platform and makes the review process fast and efficient for everyone.
-
-> **If you are contributing for Drips points or GrantFox funding, read [Contributor Incentives: Drips and GrantFox](#contributor-incentives-drips-and-grantfox) before you start work.** It explains what Akkuea does and does not control in those processes.
 
 ---
 
 ## Table of Contents
 
 1. [Code of Conduct](#code-of-conduct)
-2. [Contributor Incentives: Drips and GrantFox](#contributor-incentives-drips-and-grantfox)
-3. [How We Work: Fork-Based Workflow](#how-we-work-fork-based-workflow)
-4. [Setting Up Your Fork](#setting-up-your-fork)
-5. [Keeping Your Fork Up to Date](#keeping-your-fork-up-to-date)
-6. [Branching Strategy](#branching-strategy)
-7. [Working on an Issue](#working-on-an-issue)
-8. [Commit Standards](#commit-standards)
-9. [Code Quality Standards](#code-quality-standards)
-10. [Testing Requirements](#testing-requirements)
-11. [CI/CD: Workflows Must Pass](#cicd-workflows-must-pass)
-12. [Opening a Pull Request](#opening-a-pull-request)
-13. [Pull Request Checklist](#pull-request-checklist)
-14. [Review Process](#review-process)
-15. [Common Pitfalls](#common-pitfalls)
+2. [How We Work: Fork-Based Workflow](#how-we-work-fork-based-workflow)
+3. [Setting Up Your Fork](#setting-up-your-fork)
+4. [Keeping Your Fork Up to Date](#keeping-your-fork-up-to-date)
+5. [Branching Strategy](#branching-strategy)
+6. [Working on an Issue](#working-on-an-issue)
+7. [Commit Standards](#commit-standards)
+8. [Code Quality Standards](#code-quality-standards)
+9. [Testing Requirements](#testing-requirements)
+10. [CI/CD: Workflows Must Pass](#cicd-workflows-must-pass)
+11. [Opening a Pull Request](#opening-a-pull-request)
+12. [Pull Request Checklist](#pull-request-checklist)
+13. [Review Process](#review-process)
+14. [Common Pitfalls](#common-pitfalls)
 
 ---
 
@@ -34,31 +31,9 @@ All contributors are expected to interact with respect and professionalism. Hara
 
 ---
 
-## Contributor Incentives: Drips and GrantFox
-
-Akkuea recognizes external contributions through [Drips](https://drips.network) points and, for select approved contributions, funding allocated through [GrantFox](https://grantfox.xyz). This section sets expectations for how those processes work and where responsibility sits, so there is no ambiguity for contributors relying on them. Read this before you start work if Drips points or GrantFox funding are a factor in your decision to contribute.
-
-### Open issues as early as possible
-
-We recommend opening an issue as soon as you identify a gap, bug, or improvement, rather than waiting until you have a finished pull request. An early issue gives maintainers time to weigh in on scope, gives other contributors visibility before duplicate work starts, and gives your contribution the best chance of being reviewed and recognized promptly.
-
-### Our commitment to review
-
-We are committed to reviewing every pull request opened against this repository. That review is done carefully, not quickly: we take the time needed to verify correctness, security, and consistency with the [product brief](docs/strategy/product-brief.md) and the standards in this document. A thorough review can take longer than a same-day turnaround. We review pull requests as promptly as we reasonably can, but we do not guarantee a fixed response time.
-
-### Drips points and GrantFox payment are outside our control
-
-- Drips is the system of record for contribution points, not Akkuea. Akkuea reviews and merges contributions, but does not control if or when points are reflected on Drips. If points do not appear after a merge, this is a Drips-side matter.
-- For contributions approved for funding, Akkuea allocates an amount through GrantFox as recognition of the work. Allocating an amount is not the same as payment: GrantFox is the platform responsible for confirming and disbursing that payment, and GrantFox makes that final determination, not Akkuea.
-- If a Drips allocation does not sync, or a GrantFox allocation is delayed or not paid, Akkuea will make a reasonable effort to help a contributor resolve it, but the outcome is not entirely in Akkuea's hands and is not Akkuea's responsibility.
-
-None of the above affects code review quality or merge criteria. Every pull request is reviewed and merged strictly on its technical merits, independent of its Drips or GrantFox status.
-
----
-
 ## How We Work: Fork-Based Workflow
 
-**Akkuea does not accept direct pushes to the main repository.** Every contribution - regardless of size - must go through a personal fork and a pull request.
+**Stellar RWA Kit does not accept direct pushes to the main repository.** Every contribution - regardless of size - must go through a personal fork and a pull request.
 
 This is not a bureaucratic formality. The fork-based workflow gives maintainers visibility into every change, ensures CI runs against all contributions, and keeps the `main` and `develop` branches always in a deployable state.
 
@@ -66,8 +41,8 @@ This is not a bureaucratic formality. The fork-based workflow gives maintainers 
 
 - You must fork the repository to your personal GitHub account.
 - All work is done on a branch inside your fork.
-- You open a pull request from your fork's branch into `akkuea/akkuea:develop`.
-- You never push directly to `akkuea/akkuea` on any branch.
+- You open a pull request from your fork's branch into `emilioszn/stellar-rwa-kit:develop`.
+- You never push directly to `emilioszn/stellar-rwa-kit` on any branch.
 
 If you have been granted write access to the repository for maintenance purposes, the fork rule still applies to feature and fix work.
 
@@ -77,13 +52,13 @@ If you have been granted write access to the repository for maintenance purposes
 
 ### 1. Fork the repository
 
-Click the **Fork** button on the [akkuea/akkuea](https://github.com/akkuea/akkuea) GitHub page. This creates a copy of the repository under your account (`github.com/<your-username>/akkuea`).
+Click the **Fork** button on the [emilioszn/stellar-rwa-kit](https://github.com/emilioszn/stellar-rwa-kit) GitHub page. This creates a copy of the repository under your account (`github.com/<your-username>/stellar-rwa-kit`).
 
 ### 2. Clone your fork locally
 
 ```bash
-git clone https://github.com/<your-username>/akkuea.git
-cd akkuea
+git clone https://github.com/<your-username>/stellar-rwa-kit.git
+cd stellar-rwa-kit
 ```
 
 ### 3. Add the upstream remote
@@ -91,17 +66,17 @@ cd akkuea
 This is critical. The `upstream` remote points to the original repository. You will use it to pull in changes from the main project without going through your fork.
 
 ```bash
-git remote add upstream https://github.com/akkuea/akkuea.git
+git remote add upstream https://github.com/emilioszn/stellar-rwa-kit.git
 ```
 
 Verify your remotes are configured correctly:
 
 ```bash
 git remote -v
-# origin    https://github.com/<your-username>/akkuea.git (fetch)
-# origin    https://github.com/<your-username>/akkuea.git (push)
-# upstream  https://github.com/akkuea/akkuea.git (fetch)
-# upstream  https://github.com/akkuea/akkuea.git (push)
+# origin    https://github.com/<your-username>/stellar-rwa-kit.git (fetch)
+# origin    https://github.com/<your-username>/stellar-rwa-kit.git (push)
+# upstream  https://github.com/emilioszn/stellar-rwa-kit.git (fetch)
+# upstream  https://github.com/emilioszn/stellar-rwa-kit.git (push)
 ```
 
 ### 4. Install dependencies
@@ -306,7 +281,7 @@ Closes #342
 
 ## Code Quality Standards
 
-Akkuea is a financial platform. The code must be production-grade. The following standards are non-negotiable.
+Stellar RWA Kit is financial infrastructure. The code must be production-grade. The following standards are non-negotiable.
 
 ### No technical debt
 
@@ -395,7 +370,7 @@ cd apps/webapp && bun run test:e2e
 
 ## CI/CD: Workflows Must Pass
 
-Akkuea runs five GitHub Actions workflows on every pull request. **All five must pass before a pull request can be merged.** No exceptions.
+Stellar RWA Kit runs five GitHub Actions workflows on every pull request. **All five must pass before a pull request can be merged.** No exceptions.
 
 | Workflow           | What it validates                                                                                         |
 | ------------------ | --------------------------------------------------------------------------------------------------------- |
@@ -449,7 +424,7 @@ Do not ask maintainers to merge a pull request with failing workflows. If a work
 
 ### Target branch
 
-All pull requests must target `akkuea/akkuea:develop`. Never open a pull request targeting `main`.
+All pull requests must target `emilioszn/stellar-rwa-kit:develop`. Never open a pull request targeting `main`.
 
 ### Pull request title
 
@@ -586,6 +561,6 @@ If you accidentally commit a secret, do not attempt to rewrite history yourself 
 
 ## Questions
 
-If you have questions about any part of this process, open a [GitHub Discussion](https://github.com/akkuea/akkuea/discussions) or comment on the relevant issue. Do not open a pull request to ask a question.
+If you have questions about any part of this process, open a [GitHub Discussion](https://github.com/emilioszn/stellar-rwa-kit/discussions) or comment on the relevant issue. Do not open a pull request to ask a question.
 
 We are committed to making this a welcoming and productive contribution experience. When in doubt, ask.

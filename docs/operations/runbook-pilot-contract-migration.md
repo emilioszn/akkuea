@@ -1,7 +1,7 @@
 # Runbook: Pilot Contract Migration and Recovery
 
 **Severity:** Critical
-**Audience:** Platform admin (Akkuea), with the operator and ally available
+**Audience:** Platform admin, with the operator and ally available
 **Applies to:** `pilot-whitelist`, `pilot-income-token`, `pilot-payout-split`
 
 > **Status: rehearsed end to end on testnet, 2026-09-26.** A throwaway old
@@ -20,7 +20,7 @@
 
 The three pilot contracts are deliberately immutable: no WASM-upgrade entry
 point exists on any of them. See
-[`docs/strategy/decision-log.md`](../strategy/decision-log.md) ("Upgrade
+[`docs/decisions/decision-log.md`](../decisions/decision-log.md) ("Upgrade
 decision") for the full reasoning. In short: a two-signer upgrade mechanism
 would roughly double the audit surface of this already large change, and
 turns a compromised admin key into a full logic-replacement risk instead of
@@ -30,10 +30,8 @@ whitelist-gated transfer). Immutability trades that risk for this procedure:
 fixing a contract-level bug means deploying a new contract set and migrating
 state to it, deliberately, not patching the running one.
 
-This is also the answer to Known Risk #5 in
-[`docs/strategy/product-brief.md`](../strategy/product-brief.md) (no
-fund-recovery or unwind logic exists) for the specific case of "the contract
-itself needs to be replaced." It does not answer the separate, still-open
+This is also the answer to the risk that no fund-recovery or unwind logic
+exists, for the specific case of "the contract itself needs to be replaced." It does not answer the separate, still-open
 question of what happens to already-collected or future funds if the ally
 exits mid-cycle; that remains a product/legal question, not a technical one.
 
@@ -409,5 +407,5 @@ update it on every subsequent rehearsal.
 
 - [`docs/operations/runbook-pilot-admin-rotation.md`](runbook-pilot-admin-rotation.md)
 - [`docs/operations/runbook-pilot-emergency-pause.md`](runbook-pilot-emergency-pause.md)
-- [`docs/strategy/decision-log.md`](../strategy/decision-log.md)
+- [`docs/decisions/decision-log.md`](../decisions/decision-log.md)
 - [`docs/deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md)

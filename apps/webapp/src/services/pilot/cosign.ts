@@ -32,7 +32,7 @@ import type { SignXdr } from "./writes";
  * Two-party co-signing for the pilot's dual-authorized contract calls:
  * `execute_distribution`, `record_evidence`, and `exit`.
  *
- * See docs/strategy/decision-log.md, "Two-party signing payload transport",
+ * See docs/decisions/decision-log.md, "Two-party signing payload transport",
  * for why this passes a plain JSON string between operator and ally rather
  * than routing through an API relay: it is exactly `AssembledTransaction`'s
  * own documented multi-auth pattern (`toJson()` / `fromJson()` /

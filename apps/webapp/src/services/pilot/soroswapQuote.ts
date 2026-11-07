@@ -27,7 +27,7 @@ import { pilotNetworkPassphrase, pilotRpcUrl } from "./config";
  * (a cached price, an off-chain oracle, a hand-entered number) would let the
  * pool move between quoting and executing without the UI ever knowing, which
  * is exactly the gap `min_eurc_per_usdc` exists to close. See
- * docs/strategy/decision-log.md for why Soroswap specifically.
+ * docs/decisions/decision-log.md for why Soroswap specifically.
  */
 
 /** Soroban RPC simulation has no `require_auth`, so this address is never

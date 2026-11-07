@@ -61,7 +61,7 @@ export interface WoundDownRecord {
   at: u64;
   /**
    * Free-text reason supplied by the admin (see
-   * docs/strategy/decision-log.md for the recorded representation decision).
+   * docs/decisions/decision-log.md for the recorded representation decision).
    */
   reason: string;
 }

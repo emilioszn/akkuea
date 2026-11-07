@@ -32,7 +32,7 @@ pub trait Whitelist {
 #[contracttype]
 pub struct WoundDownRecord {
     /// Free-text reason supplied by the admin (see
-    /// docs/strategy/decision-log.md for the recorded representation decision).
+    /// docs/decisions/decision-log.md for the recorded representation decision).
     pub reason: String,
     /// Ledger timestamp of the `mark_wound_down` invocation.
     pub at: u64,

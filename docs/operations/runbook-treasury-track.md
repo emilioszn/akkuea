@@ -181,8 +181,8 @@ so the required CI workflows stay hermetic.
 read of the CETES vault fails with `TypeError: Bad union switch: 1`, and that SDK cannot
 parse the Soroban transaction data the current testnet RPC returns for that contract.
 The USDC vault is unaffected, and the Rust CLI reads both fine, so the failure is
-purely client-side. 14.0.0 is the verified minimum; the workspace is on `^14.2.0`,
-matching `apps/akkuea-land`. `apps/webapp` stays on 13.3.0, and it never talks to these
+purely client-side. 14.0.0 is the verified minimum; the workspace is on `^14.2.0`.
+`apps/webapp` stays on 13.3.0, and it never talks to these
 vaults directly.
 
 Do not downgrade those two packages below 14 without re-checking this.

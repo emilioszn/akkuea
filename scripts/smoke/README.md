@@ -25,17 +25,17 @@ Set `API_BASE_URL` (no trailing slash required):
 API_BASE_URL=https://api.staging.example.com ./scripts/smoke/run-smoke-tests.sh
 
 # Production
-API_BASE_URL=https://api.akkuea.com ./scripts/smoke/run-smoke-tests.sh
+API_BASE_URL=https://api.stellar-rwa-kit.example ./scripts/smoke/run-smoke-tests.sh
 
 # Custom timeout (seconds, default 10)
-SMOKE_TIMEOUT_SECS=20 API_BASE_URL=https://api.akkuea.com ./scripts/smoke/run-smoke-tests.sh
+SMOKE_TIMEOUT_SECS=20 API_BASE_URL=https://api.stellar-rwa-kit.example ./scripts/smoke/run-smoke-tests.sh
 ```
 
 Optional webapp check:
 
 ```bash
-API_BASE_URL=https://api.akkuea.com \
-WEBAPP_BASE_URL=https://app.akkuea.com \
+API_BASE_URL=https://api.stellar-rwa-kit.example \
+WEBAPP_BASE_URL=https://app.stellar-rwa-kit.example \
   ./scripts/smoke/run-smoke-tests.sh
 ```
 

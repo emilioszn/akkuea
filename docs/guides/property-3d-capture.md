@@ -1,6 +1,6 @@
 # 3D Gaussian Splatting Property Capture Guide
 
-This guide explains how to capture, process, and generate 3D Gaussian Splatting files (.splat) for your property listings on Akkuea. With 3D Gaussian Splatting, investors can virtually walk through your property and make more informed decisions.
+This guide explains how to capture, process, and generate 3D Gaussian Splatting files (.splat) for property listings in a Stellar RWA Kit deployment. With 3D Gaussian Splatting, investors can virtually walk through your property and make more informed decisions.
 
 ## Overview
 
@@ -155,12 +155,12 @@ Before uploading, optimize your .splat file for web streaming.
    - Verify the file loads completely in under 2 minutes
    - Test on mobile and mid-range laptops
 
-## Uploading to Akkuea
+## Uploading a splat file
 
 Once you have a validated .splat file:
 
 1. **Upload Storage**
-   - Akkuea supports IPFS, AWS S3, or CloudFlare R2 URLs
+   - The viewer supports IPFS, AWS S3, or CloudFlare R2 URLs
    - Ensure the hosting service supports range requests (for streaming)
    - Examples:
      - IPFS (Pinata, Nft.storage): `https://ipfs.io/ipfs/Qm...`
@@ -172,7 +172,7 @@ Once you have a validated .splat file:
    - The viewer will automatically appear on the property detail page
 
 3. **Troubleshooting URL Issues**
-   - Ensure CORS headers allow cross-origin requests from akkuea.example.com
+   - Ensure CORS headers allow cross-origin requests from stellar-rwa-kit.example
    - Test URL in browser: it should download the .splat file
    - Verify the file is not behind authentication or rate-limiting
 
@@ -197,7 +197,7 @@ Once you have a validated .splat file:
 
 - **Verify Property Ownership**: Only upload 3D models of properties you have rights to
 - **Blurring Sensitive Content**: Consider blurring faces, license plates, or personal documents
-- **Data Storage**: Akkuea doesn't store .splat files; only URLs are stored
+- **Data Storage**: The platform doesn't store .splat files; only URLs are stored
 - **Third-Party Hosting**: Ensure your file host (S3, IPFS, etc.) has appropriate privacy settings
 
 ## Troubleshooting
@@ -226,13 +226,13 @@ Once you have a validated .splat file:
 - Check that the `splatUrl` field was saved correctly
 - Verify the URL in the property details page
 - Wait 5 minutes; cached content may be refreshing
-- Contact Akkuea support if issue persists
+- Contact support if issue persists
 
 ## Advanced Topics
 
 ### Streaming Optimization
 
-Akkuea's viewer implements HTTP range requests to stream .splat files progressively. To ensure optimal performance:
+Stellar RWA Kit's viewer implements HTTP range requests to stream .splat files progressively. To ensure optimal performance:
 
 1. **Server Configuration** (Your Hosting Provider)
    - Enable HTTP/1.1 range requests (Accept-Ranges: bytes)
@@ -258,7 +258,7 @@ For larger properties with multiple floors or units:
 
 1. **Option A (Recommended)**: Create separate .splat files for each floor/unit
 2. **Option B**: Capture the entire property in one file and let investors navigate through
-3. Contact Akkuea support for advanced multi-splat orchestration features
+3. Contact support for advanced multi-splat orchestration features
 
 ## Support & Resources
 
@@ -266,9 +266,9 @@ For larger properties with multiple floors or units:
 - **3D Capture Apps**: Polycam, RealityScan, Meshroom
 - **Processing Services**: Matterport, Cupix, Luma AI, NeRF Factory
 - **Gaussian Splatting Resources**: https://github.com/graphdeco-inria/gaussian-splatting
-- **Akkuea Support**: support@akkuea.example.com
+- **Support**: support@stellar-rwa-kit.example
 
 ---
 
 **Last Updated**: May 2026  
-**Akkuea 3D Viewer Version**: 1.0
+**3D Viewer Version**: 1.0

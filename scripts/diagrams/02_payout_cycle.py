@@ -1,13 +1,9 @@
 """
-Akkuea - 02 Monthly Income Distribution Cycle
-The pilot's payout cycle: an allied agency submits income evidence, an Akkuea
-operator reviews and approves it, and the payout-split contract deducts a 10%
-platform fee before distributing the remainder pro-rata to token holders.
-Mirrors the mermaid sequence in docs/strategy/product-brief.md.
-
-Status: target design. The payout-split contract is pending Issue #722 (see
-docs/operations/runbook-dividends-placeholder.md) - this diagram documents the
-intended flow, not a shipped endpoint.
+Stellar RWA Kit - 02 Monthly Income Distribution Cycle
+The income distribution cycle: an asset issuer submits income evidence, a
+platform operator reviews and approves it, and the payout-split contract
+deducts a 10% platform fee before distributing the remainder pro-rata to
+token holders. Mirrors the mermaid sequence in docs/overview.md.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
@@ -20,16 +16,16 @@ g.attr(**base_graph_attr(
     splines="polyline",
     size="15,14",
     label=hl(
-        "Akkuea - Monthly Income Distribution Cycle",
-        "Target design, pending Issue #722 - see docs/strategy/product-brief.md",
+        "Stellar RWA Kit - Monthly Income Distribution Cycle",
+        "Implemented by pilot-payout-split - see docs/overview.md",
     ),
 ))
 g.attr("node", **base_node_attr())
 g.attr("edge", **base_edge_attr())
 
 actors = [
-    ("ally", "Allied Agency", F_CLIENT, B_CLIENT),
-    ("operator", "Akkuea Operator", F_DECISION, B_DECISION),
+    ("ally", "Asset Issuer", F_CLIENT, B_CLIENT),
+    ("operator", "Platform Operator", F_DECISION, B_DECISION),
     ("contract", "Payout-Split Contract", F_CONTRACT, B_CONTRACT),
     ("investor", "Token Holder", F_BACKEND, B_BACKEND),
 ]

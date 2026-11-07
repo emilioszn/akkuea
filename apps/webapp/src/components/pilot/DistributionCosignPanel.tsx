@@ -53,7 +53,7 @@ type Step =
  * string), then paste the ally's co-signed response back in to finalize and
  * submit.
  *
- * See docs/strategy/decision-log.md, "Two-party signing payload transport",
+ * See docs/decisions/decision-log.md, "Two-party signing payload transport",
  * for why this is a payload to copy rather than something submitted to a
  * server: no relay is involved anywhere in this flow.
  */

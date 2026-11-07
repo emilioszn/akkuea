@@ -1,8 +1,8 @@
 # API Overview
 
-> This document describes the API for the **existing platform build** (fractional property shares + DeFi lending) - see [`docs/strategy/product-brief.md`](../strategy/product-brief.md#relationship-to-the-existing-platform-build) for how that relates to the current pilot. The pilot's own API surface (evidence submission, whitelist review, payout-split triggers) does not exist yet.
+> For how the API fits with the rest of the kit, see [`../overview.md`](../overview.md). The workflow documents in this folder cover the `defi-rwa` flows (tokenization, KYC, share purchase). The income distribution routes (whitelist review, evidence metrics) are documented in the Swagger output at `/swagger` and in [`../deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md).
 
-The Akkuea API is built with the [Elysia](https://elysiajs.com) framework running on [Bun](https://bun.sh), providing a fast, type-safe backend for `apps/webapp` and `apps/akkuea-land`.
+The Stellar RWA Kit API is built with the [Elysia](https://elysiajs.com) framework running on [Bun](https://bun.sh), providing a fast, type-safe backend for `apps/webapp`.
 
 ## Base URL
 
@@ -15,7 +15,7 @@ The Akkuea API is built with the [Elysia](https://elysiajs.com) framework runnin
 
 - **Framework**: Elysia (TypeScript-first web framework)
 - **Runtime**: Bun
-- **Type Safety**: Full TypeScript coverage from frontend to backend, shared via `@akkuea/shared`
+- **Type Safety**: Full TypeScript coverage from frontend to backend, shared via `@stellar-rwa-kit/shared`
 - **Documentation**: Auto-generated Swagger/OpenAPI, served at `/swagger`
 
 ### Key Features
@@ -103,7 +103,7 @@ Some endpoints (e.g. property creation, tokenization) instead check an `x-user-a
 4. **Blockchain errors** - Stellar/Soroban transaction failures
 5. **Business logic errors** - invalid operations (insufficient shares, already tokenized, etc.)
 
-Only errors the API raises on purpose (its `ApiError` and `AppError` classes, the `@akkuea/shared` error classes, and request validation, parsing, and routing errors) return their own `error` code, `message`, and status. Any other failure, such as a database driver error, is logged in full on the server and returned to the client as a generic `500` with `"error": "INTERNAL_ERROR"` and `"message": "An unexpected error occurred"`, so internal details such as SQL text never reach the caller.
+Only errors the API raises on purpose (its `ApiError` and `AppError` classes, the `@stellar-rwa-kit/shared` error classes, and request validation, parsing, and routing errors) return their own `error` code, `message`, and status. Any other failure, such as a database driver error, is logged in full on the server and returned to the client as a generic `500` with `"error": "INTERNAL_ERROR"` and `"message": "An unexpected error occurred"`, so internal details such as SQL text never reach the caller.
 
 ## Rate Limiting
 
@@ -129,10 +129,10 @@ A client is identified by the address of the socket it connected from, which no 
 
 ## SDK
 
-Shared types, validation schemas, and Stellar utilities live in the `@akkuea/shared` package (`apps/shared`), imported the same way across `apps/webapp`, `apps/akkuea-land`, and `apps/api`:
+Shared types, validation schemas, and Stellar utilities live in the `@stellar-rwa-kit/shared` package (`apps/shared`), imported the same way across `apps/webapp` and `apps/api`:
 
 ```typescript
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 ```
 
 ## Environment Configuration

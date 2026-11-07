@@ -33,7 +33,6 @@ ALLOWED_EXCEPTIONS = [
     ".github/workflows/",
     "apps/api/src/index.ts",
     "apps/webapp/src/components/portfolio/PropertyReportCard.tsx",
-    "docs/README.md",
 ]
 
 EMOJI_PATTERN = re.compile(

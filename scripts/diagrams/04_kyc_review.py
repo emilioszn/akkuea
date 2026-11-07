@@ -1,6 +1,6 @@
 """
-Akkuea - 04 KYC Review Flow
-The existing platform build's compliance layer: entirely off-chain, the
+Stellar RWA Kit - 04 KYC Review Flow
+The defi-rwa compliance layer: entirely off-chain, the
 'admin as oracle' pattern. An investor uploads documents, the platform admin
 manually reviews them, and users.kycStatus flips once every document is
 approved. Mirrors docs/api/kyc-workflow.md.
@@ -16,7 +16,7 @@ g.attr(**base_graph_attr(
     splines="ortho",
     size="14,15",
     label=hl(
-        "Akkuea - KYC Review Flow (existing platform build)",
+        "Stellar RWA Kit - KYC Review Flow (defi-rwa)",
         "The 'admin as oracle' pattern - no third-party KYC provider",
     ),
 ))

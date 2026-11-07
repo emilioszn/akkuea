@@ -1,10 +1,10 @@
 # Pilot Review SLA: Whitelist and Evidence Turnaround
 
-**Status:** Provisional. Revisable once a real allied agency's review expectations are known.
+**Status:** Provisional default. Set it to what your issuer agreement requires.
 **Audience:** Operators with the internal operations API key
 **Related source:** `apps/api/src/services/reviewTurnaround.ts`, `apps/api/src/services/ReviewTurnaroundService.ts`, `apps/api/src/config/pilotReviewSla.ts`
 
-This document is the recorded SLA that `docs/strategy/product-brief.md` requires as an engineering success criterion: whitelist-review and evidence-review turnaround time defined and tracked. The timestamps already existed; this is the target they are compared against, and the operator surface that makes the comparison visible.
+This document is the recorded SLA for whitelist-review and evidence-review turnaround time, defined and tracked. The timestamps already existed; this is the target they are compared against, and the operator surface that makes the comparison visible.
 
 ---
 
@@ -124,6 +124,6 @@ When a signed ally agreement names a different review window, update the env val
 
 ## See also
 
-- `docs/strategy/product-brief.md` - engineering success criterion this SLA satisfies
+- `docs/overview.md` - the income distribution module this SLA applies to
 - `apps/api/src/workers/pilotEscalationJob.ts` - consecutive missed-cycle escalation (a different signal: silence, not slow review)
 - `docs/deployment/environment-variables.md` - env reference

@@ -1,5 +1,5 @@
 """
-Render all Akkuea diagrams to docs/diagrams/ (SVG + PNG, vertical + horizontal).
+Render all Stellar RWA Kit diagrams to docs/diagrams/ (SVG + PNG, vertical + horizontal).
 
 Usage:
     python scripts/diagrams/render_all.py        (from repo root)
@@ -25,7 +25,6 @@ scripts = [
     "03_tokenization_mint.py",
     "04_kyc_review.py",
     "05_treasury_flow.py",
-    "06_roadmap_timeline.py",
     "07_deployment_topology.py",
     "08_monorepo_structure.py",
 ]

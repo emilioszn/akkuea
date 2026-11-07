@@ -1,6 +1,6 @@
 """
-Akkuea - 03 Property Tokenization Sequence
-The existing platform build's mint flow: a property owner submits a property,
+Stellar RWA Kit - 03 Property Tokenization Sequence
+The defi-rwa mint flow: a property owner submits a property,
 an admin reviews it, and tokenizing it calls mint_shares on the defi-rwa
 Soroban contract. Mirrors the mermaid sequence in
 docs/architecture/system-architecture.md and docs/api/minting-workflow.md.
@@ -16,7 +16,7 @@ g.attr(**base_graph_attr(
     splines="ortho",
     size="14,15",
     label=hl(
-        "Akkuea - Property Tokenization (existing platform build)",
+        "Stellar RWA Kit - Property Tokenization (defi-rwa)",
         "POST /properties/:id/tokenize -> mint_shares on defi-rwa",
     ),
 ))

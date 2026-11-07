@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Instructions for AI coding agents (Codex, Cursor, Copilot, Claude Code, Gemini, and others) working on Akkuea. If you are a person, this is also the shortest path to a pull request that gets merged.
+Instructions for AI coding agents (Codex, Cursor, Copilot, Claude Code, Gemini, and others) working on Stellar RWA Kit. If you are a person, this is also the shortest path to a pull request that gets merged.
 
 ## The one rule
 
@@ -9,7 +9,7 @@ Run `make check` from the repository root before every commit you push. Fix ever
 - `make fix` applies the formatting fixes (Prettier per workspace, `cargo fmt`).
 - `make check-all` runs every check.
 - The API database tests need Docker running. If a tool is missing, `make check` says how to install it. A skipped check still runs in CI.
-- CI tests your branch merged into `develop`, so keep it current: `git fetch upstream && git rebase upstream/develop`. Add the remote once with `git remote add upstream https://github.com/akkuea/akkuea.git`.
+- CI tests your branch merged into `develop`, so keep it current: `git fetch upstream && git rebase upstream/develop`. Add the remote once with `git remote add upstream https://github.com/emilioszn/stellar-rwa-kit.git`.
 
 Do not report a task as done, and do not open a pull request, while `make check` fails.
 

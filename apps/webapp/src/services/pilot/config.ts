@@ -124,7 +124,7 @@ export class PilotAllyNotConfiguredError extends Error {
 /**
  * The pilot's ally address, a term of the operator/ally agreement rather
  * than a property of the software: the pilot is, by design, a single ally
- * relationship (see docs/strategy/product-brief.md), and
+ * relationship (see docs/overview.md), and
  * `pilot-payout-split` stores its `Ally` address at initialization with no
  * corresponding public getter. Needed wherever a two-signer invocation
  * (`execute_distribution`, `record_evidence`, `exit`) is prepared, since the

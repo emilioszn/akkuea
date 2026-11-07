@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Akkuea API uses a **challenge-response authentication flow** that leverages Stellar Ed25519 key pairs to cryptographically verify wallet ownership. This replaces the insecure `x-user-address` header pattern that previously allowed trivial impersonation.
+The Stellar RWA Kit API uses a **challenge-response authentication flow** that leverages Stellar Ed25519 key pairs to cryptographically verify wallet ownership. This replaces the insecure `x-user-address` header pattern that previously allowed trivial impersonation.
 
 ### Security Model
 
@@ -104,7 +104,7 @@ Submit the signed nonce to verify wallet ownership and receive a JWT.
 ```typescript
 import { Keypair } from "stellar-sdk";
 
-const API_BASE = "https://api.akkuea.com";
+const API_BASE = "https://api.stellar-rwa-kit.example";
 
 async function authenticate(secretKey: string): Promise<string> {
   const keypair = Keypair.fromSecret(secretKey);

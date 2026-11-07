@@ -1,4 +1,4 @@
-# Soroban Project - Akkuea Defi RWA
+# Soroban Contracts
 
 ## Project Structure
 
