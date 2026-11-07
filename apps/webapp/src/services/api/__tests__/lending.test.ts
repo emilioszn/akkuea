@@ -5,14 +5,14 @@ import type {
   BorrowPosition,
   DepositPosition,
   LendingPool,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import {
   VALID_STELLAR_ADDRESS,
   VALID_UUID,
   createLendingPool,
   createDepositPosition,
   createBorrowPosition,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 describe("Lending API", () => {
   beforeEach(() => {

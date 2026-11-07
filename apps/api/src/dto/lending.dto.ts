@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { stellarAddressSchema, positiveAmountSchema } from '@akkuea/shared';
+import { stellarAddressSchema, positiveAmountSchema } from '@stellar-rwa-kit/shared';
 
 /**
  * Decimal string that allows zero (for rates/factors)

@@ -58,7 +58,7 @@ mock.module("@/components/layout", () => ({
 
 mock.module("@/components/auth/hooks", () => ({
   useWallet: () => ({
-    address: "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000",
+    address: "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000",
     balance: "0",
     isConnected: true,
     network: "testnet",

@@ -1,5 +1,5 @@
 import { describe, expect, it, spyOn, beforeEach, afterEach } from 'bun:test';
-import { ConflictError } from '@akkuea/shared';
+import { ConflictError } from '@stellar-rwa-kit/shared';
 import { PropertyController } from '../controllers/PropertyController';
 import { propertyRepository } from '../repositories/PropertyRepository';
 import { userRepository } from '../repositories/UserRepository';

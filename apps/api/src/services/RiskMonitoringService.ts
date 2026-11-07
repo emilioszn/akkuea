@@ -3,7 +3,7 @@ import type {
   RiskLevel,
   RiskStateTransition,
   LiquidationReadiness,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 import type { BorrowPosition } from '../db/schema';
 import { RiskMonitoringRepository } from '../repositories/RiskMonitoringRepository';
 

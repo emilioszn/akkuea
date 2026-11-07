@@ -5,7 +5,7 @@ import { getMessages } from "next-intl/server";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Akkuea DeFi RWA | Real Estate Tokenization Platform",
+  title: "Stellar RWA Kit | Real-World Asset Tokenization on Stellar",
   description:
     "Democratizing real estate investment through blockchain tokenization. Fractional ownership, DeFi lending, and institutional-grade security on Stellar.",
   icons: {

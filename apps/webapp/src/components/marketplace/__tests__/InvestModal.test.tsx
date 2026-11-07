@@ -8,7 +8,7 @@ import type {
   ReactNode,
 } from "react";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { PROPERTY_IMAGE_PLACEHOLDER } from "@/components/marketplace/marketplace.utils";
 import { propertyApi } from "@/services/api/properties";
 

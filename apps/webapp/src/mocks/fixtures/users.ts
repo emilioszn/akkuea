@@ -1,7 +1,7 @@
-import type { User, KycDocument } from "@akkuea/shared";
+import type { User, KycDocument } from "@stellar-rwa-kit/shared";
 
 export const MOCK_WALLET_ADDRESS =
-  "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000";
+  "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000";
 
 export const mockKycDocuments: KycDocument[] = [
   {

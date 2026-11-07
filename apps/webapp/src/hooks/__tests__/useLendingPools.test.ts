@@ -1,10 +1,10 @@
 import { afterAll, beforeEach, describe, expect, it, mock } from "bun:test";
-import type { LendingPool, DepositPosition } from "@akkuea/shared";
+import type { LendingPool, DepositPosition } from "@stellar-rwa-kit/shared";
 import {
   VALID_STELLAR_ADDRESS,
   createLendingPool,
   createDepositPosition,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { lendingApi } from "@/services/api";
 
 // ---------------------------------------------------------------------------

@@ -3,7 +3,7 @@ import "@/test/setup-dom";
 import { afterEach, describe, expect, it, mock } from "bun:test";
 import type { ImgHTMLAttributes } from "react";
 import { cleanup, fireEvent, render } from "@testing-library/react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { PROPERTY_IMAGE_PLACEHOLDER } from "@/components/marketplace/marketplace.utils";
 
 mock.module("next/image", () => ({

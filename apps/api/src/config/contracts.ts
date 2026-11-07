@@ -1,4 +1,4 @@
-import { CONTRACT_IDS } from '@akkuea/shared';
+import { CONTRACT_IDS } from '@stellar-rwa-kit/shared';
 
 /**
  * Resolves Soroban contract IDs for the API.

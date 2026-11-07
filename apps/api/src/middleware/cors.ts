@@ -1,5 +1,5 @@
 import { cors } from '@elysiajs/cors';
-import { corsAllowedOriginsSchema, resolveCorsAllowedOrigins } from '@akkuea/shared';
+import { corsAllowedOriginsSchema, resolveCorsAllowedOrigins } from '@stellar-rwa-kit/shared';
 import { logger } from '../services/logger';
 
 /**

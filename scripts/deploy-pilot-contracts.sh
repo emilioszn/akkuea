@@ -9,7 +9,7 @@
 #   network        Stellar network to deploy to (default: testnet)
 #   identity       stellar CLI identity used as deployer/admin. For testnet it
 #                  is generated and funded if it does not exist (default: pilot-deployer)
-#   operator       Akkuea operator address required for evidence approval (required)
+#   operator       Platform operator address required for evidence approval (required)
 #   ally           Allied agency signer address required for evidence approval (required)
 #   fee_recipient  Platform fee recipient address (default: deployer address)
 #   usdc_token     USDC SAC contract ID for the target network (required)
@@ -138,7 +138,7 @@ echo "Initializing pilot_income_token..."
 invoke "$INCOME_TOKEN_ID" initialize \
     --admin "$DEPLOYER" \
     --whitelist "$WHITELIST_ID" \
-    --name "Akkuea Pilot Income Participation" \
+    --name "Income Participation Token" \
     --symbol "AKIN" \
     --decimals 7
 

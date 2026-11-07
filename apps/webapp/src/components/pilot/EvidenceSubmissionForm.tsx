@@ -10,7 +10,7 @@ import {
   Loader2,
   Wallet,
 } from "lucide-react";
-import type { PilotEvidenceStatus } from "@akkuea/shared";
+import type { PilotEvidenceStatus } from "@stellar-rwa-kit/shared";
 import { Badge, Button, Card, Input } from "@/components/ui";
 import { useWallet } from "@/components/auth/hooks";
 import {

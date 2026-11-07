@@ -207,7 +207,7 @@ export function Hero() {
       {/* Corner Decorations */}
       <div className="absolute bottom-8 left-8 text-xs font-mono text-neutral-600 hidden lg:block">
         <div>[001]</div>
-        <div className="mt-1">AKKUEA_V1.0</div>
+        <div className="mt-1">RWA_KIT_V1.0</div>
       </div>
       <div className="absolute bottom-8 right-8 text-xs font-mono text-neutral-600 hidden lg:block text-right">
         <div>SCROLL</div>

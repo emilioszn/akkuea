@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { OctagonAlert, PauseCircle } from "lucide-react";
-import type { PilotExitRecord } from "@akkuea/shared";
+import type { PilotExitRecord } from "@stellar-rwa-kit/shared";
 import { formatUnixDate } from "./format";
 
 interface PilotStateBannerProps {

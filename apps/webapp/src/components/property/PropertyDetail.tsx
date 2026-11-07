@@ -9,7 +9,7 @@ import {
   MapPin,
   TrendingUp,
 } from "lucide-react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { Badge, Button, Card } from "@/components/ui";
 import { PropertyImage } from "./PropertyImage";
 import { PropertyViewer3DDynamic } from "./PropertyViewer3D.dynamic";

@@ -17,7 +17,7 @@ import {
   createNodeContractSigner,
   DefiLendingContractClient,
   RealEstateTokenContractClient,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 import { ApiError } from '../errors/ApiError';
 import { getRealEstateTokenContractId } from '../config/contracts';
 

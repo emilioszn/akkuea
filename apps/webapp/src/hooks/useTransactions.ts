@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import type { Transaction, TransactionFilter } from "@akkuea/shared";
+import type { Transaction, TransactionFilter } from "@stellar-rwa-kit/shared";
 import { transactionsApi } from "@/services/api";
 
 export interface UseTransactionsReturn {

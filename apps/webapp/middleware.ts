@@ -4,7 +4,7 @@ import { routing } from "./src/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-const AUTH_COOKIE_NAME = "akkuea-authenticated";
+const AUTH_COOKIE_NAME = "rwa-kit-authenticated";
 const PROTECTED_ROUTES = ["/dashboard", "/marketplace"];
 
 export function middleware(request: NextRequest) {

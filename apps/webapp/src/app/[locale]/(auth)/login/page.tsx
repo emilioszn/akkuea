@@ -92,7 +92,7 @@ export default function LoginPage() {
               </p>
 
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                Jump into Akkuea without a setup detour.
+                Jump in without a setup detour.
               </h1>
 
               <p className="max-w-lg text-sm leading-6 text-neutral-400 sm:text-base">

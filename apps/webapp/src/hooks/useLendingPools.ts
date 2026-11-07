@@ -5,7 +5,7 @@ import type {
   LendingPool,
   DepositPosition,
   BorrowPosition,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { lendingApi } from "@/services/api";
 import { useLiveUpdates, type ConnectionStatus } from "@/hooks/useLiveUpdates";
 import { TIMEOUTS } from "@/lib/constants";

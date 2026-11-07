@@ -454,7 +454,7 @@ mod tests {
         token.initialize(
             &admin,
             &whitelist_id,
-            &String::from_str(&env, "Akkuea Pilot Income"),
+            &String::from_str(&env, "Sample Income Token"),
             &String::from_str(&env, "AKIN"),
             &7,
         );
@@ -483,7 +483,7 @@ mod tests {
 
         assert_eq!(
             s.token.name(),
-            String::from_str(&s.env, "Akkuea Pilot Income")
+            String::from_str(&s.env, "Sample Income Token")
         );
         assert_eq!(s.token.symbol(), String::from_str(&s.env, "AKIN"));
         assert_eq!(s.token.decimals(), 7);
@@ -1337,7 +1337,7 @@ mod tests {
         assert_eq!(s.token.admin(), s.admin);
         assert_eq!(
             s.token.name(),
-            String::from_str(&s.env, "Akkuea Pilot Income")
+            String::from_str(&s.env, "Sample Income Token")
         );
     }
 

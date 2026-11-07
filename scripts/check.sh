@@ -67,12 +67,12 @@ need() {
 # ---------------------------------------------------------------------------
 # What changed
 
-UPSTREAM_URL="https://github.com/akkuea/akkuea.git"
+UPSTREAM_URL="https://github.com/emilioszn/stellar-rwa-kit.git"
 base_ref() {
   local remote
   for remote in $(git remote); do
     case "$(git remote get-url "$remote" 2>/dev/null)" in
-      *akkuea/akkuea*)
+      *emilioszn/stellar-rwa-kit*)
         if git rev-parse -q --verify "$remote/develop" >/dev/null; then
           echo "$remote/develop"
           return
@@ -225,8 +225,8 @@ fi
 # ---------------------------------------------------------------------------
 # API - Quality and Security CI (api-ci.yml)
 
-PG_CONTAINER="akkuea-check-postgres"
-PG_PORT="${AKKUEA_CHECK_PG_PORT:-55432}"
+PG_CONTAINER="rwa-kit-check-postgres"
+PG_PORT="${RWA_KIT_CHECK_PG_PORT:-55432}"
 cleanup_pg() { docker rm -f "$PG_CONTAINER" >/dev/null 2>&1 || true; }
 
 if touched "$API_PATHS" && need bun "https://bun.sh" "api"; then
@@ -241,14 +241,14 @@ if touched "$API_PATHS" && need bun "https://bun.sh" "api"; then
       trap cleanup_pg EXIT
       cleanup_pg
       docker run -d --name "$PG_CONTAINER" -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test \
-        -e POSTGRES_DB=akkuea_test -p "$PG_PORT:5432" postgres:16 >/dev/null
+        -e POSTGRES_DB=rwa_kit_test -p "$PG_PORT:5432" postgres:16 >/dev/null
       run . "api: wait for test database" bash -c "
         for i in \$(seq 1 30); do
-          docker exec $PG_CONTAINER pg_isready -U test -d akkuea_test >/dev/null 2>&1 && exit 0
+          docker exec $PG_CONTAINER pg_isready -U test -d rwa_kit_test >/dev/null 2>&1 && exit 0
           sleep 2
         done
         echo 'The test database did not start.'; exit 1"
-      DB_URL="postgresql://test:test@localhost:$PG_PORT/akkuea_test"
+      DB_URL="postgresql://test:test@localhost:$PG_PORT/rwa_kit_test"
       run apps/api "api: migrations" env DATABASE_URL="$DB_URL" bun run db:migrate
       run apps/api "api: tests" env DATABASE_URL="$DB_URL" TEST_DATABASE_URL="$DB_URL" \
         bun test --coverage --coverage-threshold=60 --max-concurrency=1 --isolate

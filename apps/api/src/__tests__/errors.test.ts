@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, spyOn, type Mock } from 'bun:test';
 import { Elysia, t } from 'elysia';
-import { NotFoundError as SharedNotFoundError } from '@akkuea/shared';
+import { NotFoundError as SharedNotFoundError } from '@stellar-rwa-kit/shared';
 import { ApiError } from '../errors/ApiError';
 import { errorHandler } from '../middleware/errorHandler';
 import {

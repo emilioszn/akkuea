@@ -21,7 +21,7 @@ type PollarWalletLoginInput =
   | { provider: "email"; email: string }
   | { provider: "freighter" };
 
-const AUTH_COOKIE_NAME = "akkuea-authenticated";
+const AUTH_COOKIE_NAME = "rwa-kit-authenticated";
 const AUTH_COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
 
 const FRIENDLY_AUTH_ERRORS: Record<string, string> = {

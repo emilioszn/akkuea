@@ -1,4 +1,7 @@
-import type { Transaction, PaginatedTransactionResponse } from "@akkuea/shared";
+import type {
+  Transaction,
+  PaginatedTransactionResponse,
+} from "@stellar-rwa-kit/shared";
 import { MOCK_WALLET_ADDRESS } from "./users";
 
 const POOL_USDC = "GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5";

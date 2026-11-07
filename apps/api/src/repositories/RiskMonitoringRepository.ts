@@ -1,4 +1,4 @@
-import type { RiskStateTransition } from '@akkuea/shared';
+import type { RiskStateTransition } from '@stellar-rwa-kit/shared';
 
 export class RiskMonitoringRepository {
   private transitions: RiskStateTransition[] = [];

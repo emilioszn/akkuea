@@ -8,7 +8,7 @@ import {
   Lock,
   Wallet,
 } from "lucide-react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { Badge, Button, Input, Modal } from "@/components/ui";
 import {
   formatCurrency,

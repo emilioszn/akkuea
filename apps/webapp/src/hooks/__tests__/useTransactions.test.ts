@@ -9,7 +9,7 @@ import {
   spyOn,
 } from "bun:test";
 import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
-import { createTransaction } from "@akkuea/shared";
+import { createTransaction } from "@stellar-rwa-kit/shared";
 import { transactionsApi } from "@/services/api";
 import { useTransactions } from "../useTransactions";
 

@@ -1,5 +1,5 @@
 {
-  "name": "@akkuea/shared",
+  "name": "@stellar-rwa-kit/shared",
   "version": "1.0.0",
   "description": "Shared utilities and types for Real Estate DeFi platform",
   "type": "module",

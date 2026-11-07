@@ -4,7 +4,7 @@ import {
   kycStatusSchema,
   kycTierSchema,
   isoDateSchema,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 
 /**
  * Create user request schema

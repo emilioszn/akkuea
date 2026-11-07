@@ -1,5 +1,5 @@
 {
-  "name": "@akkuea/webapp",
+  "name": "@stellar-rwa-kit/webapp",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@akkuea/shared": "workspace:*",
+    "@stellar-rwa-kit/shared": "workspace:*",
     "@creit.tech/stellar-wallets-kit": "^2.6.0",
     "@creit-tech/stellar-wallets-kit": "npm:@creit.tech/stellar-wallets-kit@2.7.1",
     "@hookform/resolvers": "^3.10.0",

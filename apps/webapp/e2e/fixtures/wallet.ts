@@ -5,7 +5,7 @@ import type { Page } from "@playwright/test";
  * `src/components/auth/store/data/slices/authentication.slice.ts`) persists
  * wallet connection state under.
  */
-const WALLET_STORAGE_KEY = "akkuea-wallet-storage";
+const WALLET_STORAGE_KEY = "rwa-kit-wallet-storage";
 
 export const MOCK_OPERATOR_WALLET =
   "GA3D5KRYM6CB7OWQ6TWYRR3Z4T7GNZLKERYNZGGA5SOAOPIFY6YQGAX2";

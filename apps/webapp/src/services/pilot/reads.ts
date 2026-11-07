@@ -19,7 +19,7 @@ import {
   type PilotCycleRecord,
   type PilotEvidenceRecord,
   type PilotEvidenceStatus,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import {
   assertPilotDeployed,
   pilotContractIds,
@@ -36,7 +36,7 @@ import { enumerateCycles, expectedAtFor } from "./cycles";
  * Every value here is a simulated contract read against Soroban RPC. Nothing is
  * fetched from the API, and nothing is persisted: the dashboard is a view of
  * contract storage, which is what lets an investor treat it as evidence rather
- * than as a claim by Akkuea.
+ * than as a claim by the platform.
  */
 
 /** Platform fee the payout-split contract withholds, as a percentage. */

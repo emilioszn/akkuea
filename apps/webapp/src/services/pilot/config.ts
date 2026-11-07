@@ -1,4 +1,4 @@
-import { CONTRACT_IDS, API_ENDPOINTS } from "@akkuea/shared";
+import { CONTRACT_IDS, API_ENDPOINTS } from "@stellar-rwa-kit/shared";
 import { Networks } from "@stellar/stellar-sdk";
 
 /**
@@ -144,7 +144,7 @@ export function pilotAllyAddress(): string {
  * Base URL of the public network explorer for the configured network.
  *
  * Payout history links here so an investor can inspect the contract's stored
- * state on a source Akkuea does not control, rather than trusting the
+ * state on a source the platform does not control, rather than trusting the
  * dashboard's rendering of it.
  */
 export function pilotExplorerBaseUrl(): string {

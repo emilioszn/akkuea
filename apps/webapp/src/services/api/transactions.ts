@@ -2,7 +2,7 @@ import type {
   Transaction,
   TransactionQueryParams,
   PaginatedTransactionResponse,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { apiClient } from "./client";
 
 /**

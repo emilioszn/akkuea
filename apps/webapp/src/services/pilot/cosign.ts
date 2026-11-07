@@ -12,7 +12,7 @@ import {
   type DistributionSummary,
   type PilotIncomeTokenClientInterface,
   type PilotPayoutSplitClientInterface,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import {
   assertPilotDeployed,
   pilotContractIds,

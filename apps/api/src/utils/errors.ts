@@ -5,7 +5,7 @@ import {
   ParseError,
   ValidationError as ElysiaValidationError,
 } from 'elysia';
-import { AppError as SharedAppError } from '@akkuea/shared';
+import { AppError as SharedAppError } from '@stellar-rwa-kit/shared';
 import { ApiError } from '../errors/ApiError';
 import { logger } from '../services/logger';
 

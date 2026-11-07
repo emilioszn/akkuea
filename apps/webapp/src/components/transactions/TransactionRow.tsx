@@ -11,7 +11,7 @@ import {
   Gift,
   ExternalLink,
 } from "lucide-react";
-import type { Transaction } from "@akkuea/shared";
+import type { Transaction } from "@stellar-rwa-kit/shared";
 import { Badge } from "@/components/ui";
 import { formatCurrency, getExplorerUrl } from "@/lib/utils";
 import { useWallet } from "@/components/auth/hooks";

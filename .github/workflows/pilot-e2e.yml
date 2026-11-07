@@ -37,7 +37,7 @@ jobs:
         env:
           POSTGRES_USER: test
           POSTGRES_PASSWORD: test
-          POSTGRES_DB: akkuea_test
+          POSTGRES_DB: rwa_kit_test
         ports:
           - 5432:5432
         options: >-
@@ -60,7 +60,7 @@ jobs:
 
       - name: Run database migrations
         env:
-          DATABASE_URL: postgresql://test:test@localhost:5432/akkuea_test
+          DATABASE_URL: postgresql://test:test@localhost:5432/rwa_kit_test
         run: |
           cd apps/api
           bun run db:migrate
@@ -70,13 +70,13 @@ jobs:
 
       - name: Start the API in the background
         env:
-          DATABASE_URL: postgresql://test:test@localhost:5432/akkuea_test
+          DATABASE_URL: postgresql://test:test@localhost:5432/rwa_kit_test
           PORT: "3001"
           NODE_ENV: development
           WEBHOOK_SECRET: pilot-e2e-webhook-secret
           LIQUIDATOR_API_KEY: pilot-e2e-liquidator-key
           INTERNAL_API_KEY: pilot-e2e-internal-key
-          KYC_UPLOAD_DIR: /tmp/akkuea-kyc-uploads
+          KYC_UPLOAD_DIR: /tmp/rwa-kit-kyc-uploads
           STELLAR_NETWORK: testnet
           STELLAR_HORIZON_URL: https://horizon-testnet.stellar.org
           STELLAR_RPC_URL: https://soroban-testnet.stellar.org
@@ -87,7 +87,7 @@ jobs:
           PILOT_ESCALATION_JOB_ENABLED: "false"
         run: |
           set -euo pipefail
-          mkdir -p /tmp/akkuea-kyc-uploads
+          mkdir -p /tmp/rwa-kit-kyc-uploads
           # Derive the admin public key from the operator secret so only one
           # secret is needed; fail fast if the secret is malformed.
           cd apps/api

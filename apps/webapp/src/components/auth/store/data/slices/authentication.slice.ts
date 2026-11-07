@@ -47,7 +47,7 @@ export const useAuthenticationStore = create<AuthenticationStore>()(
       reset: () => set(initialState),
     }),
     {
-      name: "akkuea-wallet-storage",
+      name: "rwa-kit-wallet-storage",
       version: 2,
       migrate: (persisted, version) => {
         const state = persisted as {

@@ -10,7 +10,7 @@ import {
   Loader2,
   AlertCircle,
 } from "lucide-react";
-import type { LendingPool } from "@akkuea/shared";
+import type { LendingPool } from "@stellar-rwa-kit/shared";
 import { Modal, Badge, Button, Toggle } from "@/components/ui";
 import { Form, FormInput } from "@/components/forms";
 import {

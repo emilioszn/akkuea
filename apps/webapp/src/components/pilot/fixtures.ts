@@ -1,4 +1,7 @@
-import { buildCycleTimeline, type PilotExitRecord } from "@akkuea/shared";
+import {
+  buildCycleTimeline,
+  type PilotExitRecord,
+} from "@stellar-rwa-kit/shared";
 import type {
   PilotEvidenceDetail,
   PilotHoldings,

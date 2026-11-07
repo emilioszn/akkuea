@@ -23,7 +23,7 @@ import { createNotificationWorkerFromEnv } from './workers/notificationWorker';
 import { createKycExpiryJobFromEnv } from './workers/kycExpiryJob';
 import { createPilotEscalationJobFromEnv } from './workers/pilotEscalationJob';
 import { createIdempotencyCleanupJobFromEnv } from './workers/idempotencyCleanupJob';
-import { validateApiEnv } from '@akkuea/shared';
+import { validateApiEnv } from '@stellar-rwa-kit/shared';
 
 // Validate environment variables on startup (fails fast with actionable guide if missing)
 validateApiEnv();

@@ -183,7 +183,8 @@ export function Footer() {
           className="mt-12 pt-8 border-t border-[#1a1a1a] flex flex-col sm:flex-row justify-between items-center gap-4"
         >
           <p className="text-[10px] text-neutral-600 font-mono">
-            &copy; {new Date().getFullYear()} AKKUEA. All rights reserved.
+            &copy; {new Date().getFullYear()} Stellar RWA Kit. Released under
+            the MIT License.
           </p>
           <div className="flex items-center gap-4">
             <p className="text-[10px] text-neutral-600 font-mono">

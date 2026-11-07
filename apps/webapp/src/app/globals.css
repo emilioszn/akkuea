@@ -1,7 +1,7 @@
 @import "tailwindcss";
-/* Colour and typography tokens live in @akkuea/shared.
+/* Colour and typography tokens live in @stellar-rwa-kit/shared.
    Edit them in apps/shared/src/styles/tokens.css, not here. */
-@import "@akkuea/shared/styles/tokens.css";
+@import "@stellar-rwa-kit/shared/styles/tokens.css";
 
 @theme inline {
   --color-background: var(--background);

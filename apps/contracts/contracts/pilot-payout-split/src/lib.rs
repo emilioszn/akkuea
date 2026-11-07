@@ -1148,9 +1148,9 @@ impl PilotPayoutSplit {
     /// Deliberately gated by the admin alone, not by the operator+ally
     /// two-signer model used for `record_evidence`, `execute_distribution`,
     /// and `exit`. Reasoning recorded in docs/strategy/decision-log.md: the
-    /// admin key is Akkuea's own platform key, distinct from the operator and
+    /// admin key is the platform's own key, distinct from the operator and
     /// ally business roles, and requiring the ally's co-signature would let
-    /// an unresponsive or adversarial ally block Akkuea's ability to recover
+    /// an unresponsive or adversarial ally block the platform's ability to recover
     /// from a lost or compromised admin key, which is exactly the failure
     /// mode this feature exists to close.
     pub fn transfer_admin_start(env: Env, caller: Address, new_admin: Address) {
@@ -1523,7 +1523,7 @@ pub mod tests {
         token.initialize(
             &admin,
             &whitelist_id,
-            &String::from_str(&env, "Akkuea Pilot Income"),
+            &String::from_str(&env, "Sample Income Token"),
             &String::from_str(&env, "AKIN"),
             &7,
         );

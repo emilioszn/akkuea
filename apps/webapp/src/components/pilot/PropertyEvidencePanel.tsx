@@ -16,7 +16,7 @@ interface PropertyEvidencePanelProps {
  *
  * The hashed income statement says what the ally reported. This says the
  * property is real and looks the way it was described, which an investor can
- * judge without trusting either Akkuea or the ally.
+ * judge without trusting either the platform or the ally.
  *
  * The pilot ally may not have a capture yet, so an absent splat renders an
  * explicit empty state rather than blocking the rest of the page.

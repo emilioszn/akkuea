@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   comment:
-    if: github.repository == 'akkuea/akkuea'
+    if: github.repository == 'emilioszn/stellar-rwa-kit'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
