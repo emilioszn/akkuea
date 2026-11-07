@@ -4,12 +4,12 @@ import { useState } from "react";
 import { ChevronDown, LogOut, Wallet } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { useGameWallet } from "@/components/auth/hooks";
+import { usePollarWallet } from "@/components/auth/hooks";
 import { cn, truncateAddress } from "@/lib/utils";
 
 export function WalletStatusWidget() {
   const { wallet, isConnected, isConnecting, connect, logout } =
-    useGameWallet();
+    usePollarWallet();
   const [menuOpen, setMenuOpen] = useState(false);
 
   if (!isConnected) {

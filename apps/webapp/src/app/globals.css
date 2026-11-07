@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* Colour and typography tokens are shared with apps/akkuea-land.
+/* Colour and typography tokens live in @akkuea/shared.
    Edit them in apps/shared/src/styles/tokens.css, not here. */
 @import "@akkuea/shared/styles/tokens.css";
 

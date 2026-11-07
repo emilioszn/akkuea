@@ -34,7 +34,6 @@ ALLOWED_EXCEPTIONS = [
     "apps/api/src/index.ts",
     "apps/webapp/src/components/portfolio/PropertyReportCard.tsx",
     "docs/README.md",
-    "docs/deployment/deploy-game-contracts.md",
 ]
 
 EMOJI_PATTERN = re.compile(

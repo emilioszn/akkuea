@@ -6,8 +6,8 @@ import { WalletType } from "@pollar/core";
 import { usePollar } from "@pollar/react";
 import { sanitizeCallbackUrl } from "@/lib/sanitizeCallbackUrl";
 
-type GameWalletNetwork = "testnet" | "mainnet";
-type GameWalletAuthStep =
+type PollarWalletNetwork = "testnet" | "mainnet";
+type PollarWalletAuthStep =
   | "idle"
   | "oauth"
   | "email"
@@ -16,7 +16,7 @@ type GameWalletAuthStep =
   | "error"
   | "creating_session";
 
-type GameWalletLoginInput =
+type PollarWalletLoginInput =
   | { provider: "google" }
   | { provider: "email"; email: string }
   | { provider: "freighter" };
@@ -83,18 +83,18 @@ function getReadableAuthError(errorCode?: string | null): string | null {
   );
 }
 
-export function useGameWallet() {
+export function usePollarWallet() {
   const pollar = usePollar();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [authStep, setAuthStep] = useState<GameWalletAuthStep>("idle");
+  const [authStep, setAuthStep] = useState<PollarWalletAuthStep>("idle");
   const [authError, setAuthError] = useState<string | null>(null);
 
   useEffect(() => {
     const client = pollar.getClient();
     const unsubscribe = client.onAuthStateChange((state) => {
-      const step = (state.step ?? "idle") as GameWalletAuthStep;
+      const step = (state.step ?? "idle") as PollarWalletAuthStep;
       setAuthStep(step);
 
       if (step === "error") {
@@ -114,7 +114,7 @@ export function useGameWallet() {
   const isConnected = Boolean(pollar.isAuthenticated);
   const walletAddress = pollar.walletAddress ?? "";
   const walletBalance = extractBalance(pollar.walletBalance);
-  const network = (pollar.network ?? "testnet") as GameWalletNetwork;
+  const network = (pollar.network ?? "testnet") as PollarWalletNetwork;
 
   useEffect(() => {
     writeAuthCookie(isConnected);
@@ -136,7 +136,7 @@ export function useGameWallet() {
   }, [pathname, router, searchParams]);
 
   const login = useCallback(
-    (input: GameWalletLoginInput) => {
+    (input: PollarWalletLoginInput) => {
       setAuthError(null);
 
       if (input.provider === "google") {
@@ -173,7 +173,7 @@ export function useGameWallet() {
   }, [pollar]);
 
   const setNetwork = useCallback(
-    (nextNetwork: GameWalletNetwork) => pollar.setNetwork(nextNetwork),
+    (nextNetwork: PollarWalletNetwork) => pollar.setNetwork(nextNetwork),
     [pollar],
   );
 
@@ -203,4 +203,4 @@ export function useGameWallet() {
   };
 }
 
-export type { GameWalletLoginInput };
+export type { PollarWalletLoginInput };

@@ -1,13 +1,11 @@
-/* ─── Akkuea design tokens ──────────────────────────────────────────────── */
+/* ─── Design tokens ─────────────────────────────────────────────────────── */
 /*
- * Single source of truth for colour and typography across every Akkuea
- * surface. Imported by `apps/webapp/src/app/globals.css` and
- * `apps/akkuea-land/src/app/globals.css`.
+ * Single source of truth for colour and typography across every frontend
+ * in the kit. Imported by `apps/webapp/src/app/globals.css`.
  *
  * Do not redeclare these values in an app. An app may alias them to a
- * domain-specific name (Akkuea Land maps them onto its `--land-*` layer),
- * but the value must resolve back to a token declared here, so that
- * changing a colour once changes it everywhere.
+ * domain-specific name, but the value must resolve back to a token declared
+ * here, so that changing a colour once changes it everywhere.
  *
  * Theme switching: the `.light` class is applied to <html> by each app's
  * ThemeProvider. Because every downstream token is defined with `var()`
@@ -45,9 +43,8 @@
   --noise-opacity: 0.03;
 
   /* ── Extended palette ──
-   * Roles the webapp component library does not need yet but Akkuea Land
-   * does. They live here rather than in one app so both resolve them
-   * identically and a future webapp surface can adopt them without
+   * Roles the webapp component library does not use yet. They live here so
+   * any new frontend resolves them identically and can adopt them without
    * reinventing a value.
    */
 
