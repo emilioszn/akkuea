@@ -1,5 +1,5 @@
 {
-  "name": "@akkuea/shared",
+  "name": "@stellar-rwa-kit/shared",
   "version": "1.0.0",
   "description": "Shared utilities and types for Real Estate DeFi platform",
   "type": "module",
@@ -12,8 +12,7 @@
     },
     "./styles/tokens.css": "./src/styles/tokens.css",
     "./contracts.testnet.json": "./src/contracts.testnet.json",
-    "./contracts.mainnet.json": "./src/contracts.mainnet.json",
-    "./game-contracts.testnet.json": "./src/contracts/game-contracts.testnet.json"
+    "./contracts.mainnet.json": "./src/contracts.mainnet.json"
   },
   "scripts": {
     "build": "tsc",

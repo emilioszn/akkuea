@@ -23,7 +23,6 @@ export {
   type VaultMethodOptions,
   type VaultWithdrawArgs,
 } from "./contracts/defindexVault.js";
-export * from "./contracts/game/index.js";
 export * from "./contracts/pilot/index.js";
 export * from "./utils/stellar.js";
 export * from "./utils/validation.js";

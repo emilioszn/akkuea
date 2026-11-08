@@ -78,8 +78,8 @@ function makePayoutClient() {
   };
 }
 
-const RealShared = await import("@akkuea/shared");
-mock.module("@akkuea/shared", () => ({
+const RealShared = await import("@stellar-rwa-kit/shared");
+mock.module("@stellar-rwa-kit/shared", () => ({
   ...RealShared,
   buildContractClientOptions: (config: (typeof clientOptions)[number]) => {
     clientOptions.push(config);
@@ -153,7 +153,7 @@ afterEach(() => {
 });
 
 afterAll(() => {
-  mock.module("@akkuea/shared", () => RealShared);
+  mock.module("@stellar-rwa-kit/shared", () => RealShared);
 });
 
 describe("argument mapping", () => {

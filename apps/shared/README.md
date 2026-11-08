@@ -1,8 +1,8 @@
-# @akkuea/shared
+# @stellar-rwa-kit/shared
 
 Shared types, validation, Stellar SDK helpers, contract-ID resolution, and test
-factories for the Akkuea monorepo. Imported by all three TypeScript workspaces
-(`apps/webapp`, `apps/api`, `apps/akkuea-land`).
+factories for the Stellar RWA Kit monorepo. Imported by the other TypeScript
+workspaces (`apps/webapp`, `apps/api`).
 
 ## Generating Soroban TypeScript Bindings
 
@@ -34,18 +34,11 @@ After regeneration:
 2. Run `bun run format` to fix formatting.
 3. Run `bun test` to confirm existing tests still pass.
 
-### Game contracts
-
-Game contract bindings (`game-property-nft`, `game-land-token`, `game-engine`,
-`game-marketplace`) follow the same pattern under `src/contracts/game/`.
-
 ## Re-adding contract IDs
 
 After a redeploy, update the appropriate JSON file:
 
 - Testnet: `apps/shared/src/contracts.testnet.json`
 - Mainnet: `apps/shared/src/contracts.mainnet.json`
-- Game contracts (testnet):
-  `apps/shared/src/contracts/game-contracts.testnet.json`
 
 Then regenerate bindings as described above.

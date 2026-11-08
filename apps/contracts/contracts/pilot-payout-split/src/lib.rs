@@ -74,7 +74,7 @@ pub trait Whitelist {
 
 /// Minimal client surface for the Soroswap AMM router (github.com/soroswap/core,
 /// `contracts/router`). Only the single-hop exact-input swap used for settlement
-/// is declared. Verification notes live in docs/strategy/decision-log.md.
+/// is declared. Verification notes live in docs/decisions/decision-log.md.
 #[contractclient(name = "SoroswapRouterClient")]
 pub trait SoroswapRouter {
     fn swap_exact_tokens_for_tokens(
@@ -255,7 +255,7 @@ pub struct ExitRecord {
     /// Free-text reason supplied by the two signing parties. Deliberately a
     /// string rather than an enum or hash-plus-off-chain-link so the dashboard
     /// can render why the exit happened directly from on-chain state (see
-    /// docs/strategy/decision-log.md for the recorded rationale).
+    /// docs/decisions/decision-log.md for the recorded rationale).
     pub reason: String,
     /// Ledger timestamp of the `exit` invocation.
     pub at: u64,
@@ -1147,10 +1147,10 @@ impl PilotPayoutSplit {
     ///
     /// Deliberately gated by the admin alone, not by the operator+ally
     /// two-signer model used for `record_evidence`, `execute_distribution`,
-    /// and `exit`. Reasoning recorded in docs/strategy/decision-log.md: the
-    /// admin key is Akkuea's own platform key, distinct from the operator and
+    /// and `exit`. Reasoning recorded in docs/decisions/decision-log.md: the
+    /// admin key is the platform's own key, distinct from the operator and
     /// ally business roles, and requiring the ally's co-signature would let
-    /// an unresponsive or adversarial ally block Akkuea's ability to recover
+    /// an unresponsive or adversarial ally block the platform's ability to recover
     /// from a lost or compromised admin key, which is exactly the failure
     /// mode this feature exists to close.
     pub fn transfer_admin_start(env: Env, caller: Address, new_admin: Address) {
@@ -1523,7 +1523,7 @@ pub mod tests {
         token.initialize(
             &admin,
             &whitelist_id,
-            &String::from_str(&env, "Akkuea Pilot Income"),
+            &String::from_str(&env, "Sample Income Token"),
             &String::from_str(&env, "AKIN"),
             &7,
         );

@@ -3,7 +3,7 @@
  *
  * The income statement itself never leaves the ally's machine: the browser
  * computes a SHA-256 digest and only that digest is written on-chain, alongside
- * a link the ally controls. That keeps the pilot's promise that Akkuea stores no
+ * a link the ally controls. That keeps the pilot's promise that the platform stores no
  * evidence files, and it means anyone can re-hash the document later and check
  * it against the chain.
  */

@@ -1,6 +1,6 @@
 import { describe, expect, it, mock, beforeEach } from 'bun:test';
 import { Elysia } from 'elysia';
-import { VALID_UUID } from '@akkuea/shared';
+import { VALID_UUID } from '@stellar-rwa-kit/shared';
 
 process.env.OPERATIONS_BACKEND_CREDENTIAL = 'test-ops-secret';
 process.env.LIQUIDATOR_API_KEY = 'test-liquidator-secret';

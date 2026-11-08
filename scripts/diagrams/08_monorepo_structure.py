@@ -1,6 +1,6 @@
 """
-Akkuea - 08 Monorepo Structure
-The apps/ workspace tree: five applications, four of them bun workspaces plus
+Stellar RWA Kit - 08 Monorepo Structure
+The apps/ workspace tree: four applications, three of them bun workspaces plus
 the Rust contracts workspace, which itself holds two independent contract
 systems. Mirrors the Project Structure section of README.md.
 """
@@ -15,31 +15,29 @@ g.attr(**base_graph_attr(
     splines="polyline",
     size="16,14",
     label=hl(
-        "Akkuea - Monorepo Structure",
+        "Stellar RWA Kit - Monorepo Structure",
         "Bun workspaces under apps/, plus the Rust contracts workspace",
     ),
 ))
 g.attr("node", **base_node_attr())
 g.attr("edge", **base_edge_attr())
 
-g.node("root", hl("akkuea/", "Bun monorepo root"),
+g.node("root", hl("stellar-rwa-kit/", "Bun monorepo root"),
        shape="box", style="filled,rounded,bold", fillcolor=F_MONOREPO, color=B_MONOREPO, penwidth="3")
 
 g.node("apps", hl("apps/"), fillcolor=F_MONOREPO, color=B_MONOREPO, penwidth="2")
 g.edge("root", "apps", penwidth="2")
 
-g.node("webapp", hl("webapp/", "Next.js 16 + React 19", "@akkuea/webapp - existing platform build"),
+g.node("webapp", hl("webapp/", "Next.js 16 + React 19", "@stellar-rwa-kit/webapp"),
        fillcolor=F_CLIENT, color=B_CLIENT)
-g.node("land", hl("akkuea-land/", "Next.js", "@akkuea/akkuea-land - pilot's visual companion"),
-       fillcolor=F_CLIENT, color=B_CLIENT)
-g.node("api", hl("api/", "Elysia / Bun", "@akkuea/api"),
+g.node("api", hl("api/", "Elysia / Bun", "@stellar-rwa-kit/api"),
        fillcolor=F_BACKEND, color=B_BACKEND)
-g.node("shared", hl("shared/", "TypeScript", "@akkuea/shared - imported by webapp, land, api"),
+g.node("shared", hl("shared/", "TypeScript", "@stellar-rwa-kit/shared - imported by webapp, api"),
        fillcolor=F_KYC, color=B_KYC)
 g.node("contracts", hl("contracts/", "Rust / Soroban", "Not a bun workspace, built separately"),
        fillcolor=F_CONTRACT, color=B_CONTRACT, penwidth="2")
 
-for child in ("webapp", "land", "api", "shared", "contracts"):
+for child in ("webapp", "api", "shared", "contracts"):
     g.edge("apps", child, penwidth="2")
 
 with g.subgraph(name="cluster_contracts") as c:
@@ -53,24 +51,17 @@ with g.subgraph(name="cluster_contracts") as c:
         penwidth="2",
         margin="14",
     )
-    c.node("rwa", hl("defi-rwa/", "Existing platform build", "Fractional shares + lending"),
+    c.node("rwa", hl("defi-rwa/", "Fractional shares + lending"),
             fillcolor=F_CONTRACT, color=B_CONTRACT, penwidth="2")
-    c.node("g_nft", hl("game-property-nft/"), fillcolor=F_CONTRACT, color=B_CONTRACT)
-    c.node("g_token", hl("game-land-token/"), fillcolor=F_CONTRACT, color=B_CONTRACT)
-    c.node("g_engine", hl("game-engine/"), fillcolor=F_CONTRACT, color=B_CONTRACT)
-    c.node("g_mkt", hl("game-marketplace/"), fillcolor=F_CONTRACT, color=B_CONTRACT)
+    c.node("wl", hl("pilot-whitelist/", "Income distribution"), fillcolor=F_CONTRACT, color=B_CONTRACT)
+    c.node("it", hl("pilot-income-token/", "Income distribution"), fillcolor=F_CONTRACT, color=B_CONTRACT)
+    c.node("ps", hl("pilot-payout-split/", "Income distribution"), fillcolor=F_CONTRACT, color=B_CONTRACT)
 
-for child in ("rwa", "g_nft", "g_token", "g_engine", "g_mkt"):
+for child in ("rwa", "wl", "it", "ps"):
     g.edge("contracts", child)
 
-g.node("pilot_note",
-       hl("Pilot contract surface", "Income token + whitelist + payout-split", "Being built here, as a third independent system"),
-       shape="note", fillcolor=F_WARNING, color=B_WARNING, fontsize="9")
-g.edge("contracts", "pilot_note", style="dotted", color=E_DEFAULT)
-
-# shared library consumed by all three TypeScript workspaces
+# shared library consumed by the other TypeScript workspaces
 g.edge("webapp", "shared", style="dotted", dir="none", color=E_DEFAULT)
-g.edge("land", "shared", style="dotted", dir="none", color=E_DEFAULT)
 g.edge("api", "shared", style="dotted", dir="none", color=E_DEFAULT)
 
 render(g, "08-monorepo-structure")

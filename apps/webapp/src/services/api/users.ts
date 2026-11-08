@@ -1,4 +1,4 @@
-import type { User, Transaction, KycDocument } from "@akkuea/shared";
+import type { User, Transaction, KycDocument } from "@stellar-rwa-kit/shared";
 import { apiClient } from "./client";
 
 /**

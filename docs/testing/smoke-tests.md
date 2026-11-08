@@ -36,7 +36,7 @@ import {
   NON_EXISTENT_UUID,
   BASE_DATE,
   VALID_TX_HASH,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 ```
 
 These replace locally-duplicated values like `const VALID_STELLAR_ADDRESS = "G..."` that appear across test files.
@@ -46,7 +46,7 @@ These replace locally-duplicated values like `const VALID_STELLAR_ADDRESS = "G..
 Each factory returns a schema-compliant object with realistic defaults and accepts `Partial<T>` overrides:
 
 ```ts
-import { createUser, createProperty, createLendingPool } from "@akkuea/shared";
+import { createUser, createProperty, createLendingPool } from "@stellar-rwa-kit/shared";
 
 // Defaults - approved KYC user with Miami address
 const user = createUser();
@@ -84,7 +84,7 @@ import {
   MIAMI_PROPERTY_SCENARIO,
   USDC_LENDING_SCENARIO,
   USER_ONBOARDING_SCENARIO,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 // Miami property with owner, 3 investors, and purchase transactions
 const { owner, property, investors, transactions } = MIAMI_PROPERTY_SCENARIO;
@@ -101,7 +101,7 @@ const { newUser, pendingUser, verifiedUser, rejectedUser } =
 
 ```ts
 import { describe, it, expect } from "bun:test";
-import { createUser, VALID_UUID } from "@akkuea/shared";
+import { createUser, VALID_UUID } from "@stellar-rwa-kit/shared";
 
 describe("GET /users/:id", () => {
   it("should return user data", async () => {
@@ -114,7 +114,7 @@ describe("GET /users/:id", () => {
 ## Example: Webapp component test
 
 ```ts
-import { createProperty, MIAMI_PROPERTY_SCENARIO } from "@akkuea/shared";
+import { createProperty, MIAMI_PROPERTY_SCENARIO } from "@stellar-rwa-kit/shared";
 
 test("PropertyCard renders price", () => {
   const property = createProperty({ totalValue: "3500000" });
@@ -133,7 +133,7 @@ Manual unit tests (`bun test`) cover correctness. For **post-deploy** checks (ap
 bun run smoke
 
 # Staging / production
-API_BASE_URL=https://api.akkuea.com ./scripts/smoke/run-smoke-tests.sh
+API_BASE_URL=https://api.stellar-rwa-kit.example ./scripts/smoke/run-smoke-tests.sh
 ```
 
 Full env reference and CI wiring: [`scripts/smoke/README.md`](../../scripts/smoke/README.md).

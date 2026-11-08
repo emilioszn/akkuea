@@ -1,5 +1,5 @@
 import { z, type RefinementCtx } from "zod";
-import { positiveAmountSchema } from "@akkuea/shared";
+import { positiveAmountSchema } from "@stellar-rwa-kit/shared";
 
 const nonEmpty = (label: string) => z.string().min(1, `${label} is required`);
 

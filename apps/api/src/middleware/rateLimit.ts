@@ -1,5 +1,5 @@
 import type { Context } from 'elysia';
-import { trustedProxyHopsSchema } from '@akkuea/shared';
+import { trustedProxyHopsSchema } from '@stellar-rwa-kit/shared';
 
 /**
  * The subset of a Bun server the limiter reads.

@@ -19,5 +19,4 @@ export {
   type VaultMethodOptions,
   type VaultWithdrawArgs,
 } from "./defindexVault.js";
-export * from "./game/index.js";
 export * from "./pilot/index.js";

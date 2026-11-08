@@ -1,5 +1,5 @@
 """
-Akkuea - 05 Phase 1a Treasury Track
+Stellar RWA Kit - 05 Treasury Track
 The accumulated platform fee is deposited into two already-audited, already-
 deployed DeFindex Vaults (a Blend USDC strategy and an EtherFuse CETES
 Stablebond strategy) so it earns a return and settles on-chain, checkable by
@@ -16,7 +16,7 @@ g.attr(**base_graph_attr(
     splines="spline",
     size="15,13",
     label=hl(
-        "Akkuea - Phase 1a Treasury Track",
+        "Stellar RWA Kit - Treasury Track",
         "Platform fee -> DeFindex Vaults -> checkable on-chain yield",
     ),
 ))

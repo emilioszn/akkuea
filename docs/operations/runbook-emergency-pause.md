@@ -299,5 +299,5 @@ T+24:xx   execute_recovery called.
 
 - `docs/operations/runbook-oracle-failure.md` - oracle-specific incident
 - `docs/operations/runbook-role-management.md` - granting/revoking EmergencyGuard
-- `docs/operations/runbook-dividends-placeholder.md` - future dividend/cashflow operations (Issue #722)
+- `docs/operations/runbook-pilot-emergency-pause.md` - pausing the income distribution contracts
 - `docs/deployment/deploy-contracts.md` - admin key setup

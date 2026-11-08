@@ -3,7 +3,7 @@ import {
   PilotPayoutSplitClient,
   type PilotPayoutSplitClientInterface,
   type PilotSettlementCurrency,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import {
   assertPilotDeployed,
   pilotContractIds,

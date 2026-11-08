@@ -1,4 +1,4 @@
-# Akkuea Diagram Generation Pipeline
+# Diagram Generation Pipeline
 
 Professional diagrams as code using Python + Graphviz. Every diagram is versioned, regenerated on demand, and never hand-drawn.
 
@@ -55,16 +55,15 @@ SVG is preferred for documentation (scales cleanly). PNG is provided for tools t
 
 | #   | Script                      | Diagram                                                               | Embedded in                                             |
 | --- | --------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------- |
-| 01  | `01_system_architecture.py` | Five-app monorepo architecture                                        | `docs/architecture/system-architecture.md`, `README.md` |
-| 02  | `02_payout_cycle.py`        | Monthly income distribution cycle (target design, pending Issue #722) | `docs/operations/runbook-dividends-placeholder.md`      |
-| 03  | `03_tokenization_mint.py`   | Property tokenization sequence (existing platform build)              | `docs/api/minting-workflow.md`                          |
+| 01  | `01_system_architecture.py` | Monorepo architecture                                                 | `docs/architecture/system-architecture.md`, `README.md` |
+| 02  | `02_payout_cycle.py`        | Monthly income distribution cycle                                     | `docs/overview.md`                                      |
+| 03  | `03_tokenization_mint.py`   | Property tokenization sequence (`defi-rwa`)                           | `docs/api/minting-workflow.md`                          |
 | 04  | `04_kyc_review.py`          | KYC review flow, admin-as-oracle pattern                              | `docs/api/kyc-workflow.md`                              |
-| 05  | `05_treasury_flow.py`       | Phase 1a treasury track (DeFindex + EtherFuse)                        | `docs/operations/runbook-treasury-track.md`             |
-| 06  | `06_roadmap_timeline.py`    | Phase 1 to Phase 2 roadmap                                            | `docs/strategy/roadmap.md`                              |
+| 05  | `05_treasury_flow.py`       | Treasury track (DeFindex + EtherFuse)                                 | `docs/operations/runbook-treasury-track.md`             |
 | 07  | `07_deployment_topology.py` | Testnet vs mainnet topology                                           | `docs/architecture/system-architecture.md`              |
 | 08  | `08_monorepo_structure.py`  | Workspace structure and dependencies                                  | `README.md`                                             |
 
-These are the diagrams for the **existing platform build** and the **pilot's own flows**, kept distinct per [`docs/strategy/product-brief.md`](../../docs/strategy/product-brief.md#relationship-to-the-existing-platform-build). Diagram content is sourced from the mermaid diagrams already embedded in those documents; this pipeline exists to give the same information a presentation-quality, on-brand rendering for non-technical stakeholders, not to replace the mermaid diagrams GitHub already renders natively.
+These cover both contract systems (`defi-rwa` and the income distribution contracts) described in [`docs/overview.md`](../../docs/overview.md). Diagram content is sourced from the mermaid diagrams already embedded in those documents; this pipeline exists to give the same information a presentation-quality rendering for non-technical stakeholders, not to replace the mermaid diagrams GitHub already renders natively.
 
 ## Adding a new diagram
 
@@ -93,7 +92,7 @@ import graphviz
 
 ### Style tokens
 
-The `_style.py` module provides the Akkuea design-system palette, copied directly from [`docs/design-system/foundations.md`](../../docs/design-system/foundations.md) (light theme). The six real chromatic tokens (`--accent`, `--accent-secondary`, `--accent-tertiary`, `--accent-quaternary`, `--warning`, `--destructive`) cover every diagram category - nothing here is invented or picked from an unrelated palette:
+The `_style.py` module provides the design-system palette, copied directly from [`docs/design-system/foundations.md`](../../docs/design-system/foundations.md) (light theme). The six real chromatic tokens (`--accent`, `--accent-secondary`, `--accent-tertiary`, `--accent-quaternary`, `--warning`, `--destructive`) cover every diagram category - nothing here is invented or picked from an unrelated palette:
 
 | Category | Tokens                                                                                                        | Real source                                                                                                                                     |
 | -------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |

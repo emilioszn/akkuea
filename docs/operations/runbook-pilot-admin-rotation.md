@@ -1,6 +1,6 @@
 # Runbook: Pilot Admin Rotation
 
-**Audience:** Platform admin (Akkuea)
+**Audience:** Platform admin
 **Applies to:** `pilot-whitelist`, `pilot-income-token`, `pilot-payout-split`
 **Required key:** the current admin's Stellar secret key, for each contract
 **Contract sources:**
@@ -18,8 +18,7 @@ address at `initialize` and compared every privileged call against it, with
 no way to rotate, transfer, or recover it. If that key was lost or
 compromised, every privileged function on that contract (minting, whitelist
 approvals, pause/unpause, `mark_wound_down`) became permanently uncallable or
-permanently hijacked. This is Known Risk #7 in
-[`docs/strategy/product-brief.md`](../strategy/product-brief.md).
+permanently hijacked.
 
 Each contract now carries its own independent two-step admin transfer,
 following the same pattern already built for `defi-rwa`
@@ -30,7 +29,7 @@ versa. If the same key holds admin on all three (the typical deployment,
 per `docs/deployment/deploy-pilot-contracts.md`), rotate all three when that
 key is replaced.
 
-See [`docs/strategy/decision-log.md`](../strategy/decision-log.md) ("Pilot
+See [`docs/decisions/decision-log.md`](../decisions/decision-log.md) ("Pilot
 contract admin safety and recoverability") for why admin transfer on
 `pilot-payout-split` is gated by the admin alone, not by the operator+ally
 two-signer model used for evidence and distribution.
@@ -204,5 +203,5 @@ not wait for an unpause to rotate a suspected-compromised key.
 - [`docs/operations/runbook-pilot-emergency-pause.md`](runbook-pilot-emergency-pause.md)
 - [`docs/operations/runbook-pilot-contract-migration.md`](runbook-pilot-contract-migration.md)
 - [`docs/operations/runbook-role-management.md`](runbook-role-management.md) - the `defi-rwa` equivalent
-- [`docs/strategy/decision-log.md`](../strategy/decision-log.md) - why admin transfer is single-role on `pilot-payout-split`
+- [`docs/decisions/decision-log.md`](../decisions/decision-log.md) - why admin transfer is single-role on `pilot-payout-split`
 - [`docs/deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md)

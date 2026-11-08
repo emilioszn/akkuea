@@ -24,7 +24,7 @@ const VALID_SECRET_KEY = sampleKeypair.secret();
 const VALID_CONTRACT_ID = StrKey.encodeContract(Buffer.alloc(32));
 
 const VALID_API_ENV = {
-  DATABASE_URL: "postgresql://user:password@localhost:5432/akkuea_defi",
+  DATABASE_URL: "postgresql://user:password@localhost:5432/rwa_kit",
   DATABASE_POOL_MAX: "10",
   DATABASE_SSL: "false",
   PORT: "3001",
@@ -35,7 +35,7 @@ const VALID_API_ENV = {
   OPERATIONS_ALLOWED_WALLETS: "*",
   LIQUIDATOR_API_KEY: "0123456789abcdef0123456789abcdef",
   INTERNAL_API_KEY: "0123456789abcdef0123456789abcdef",
-  KYC_UPLOAD_DIR: "/tmp/akkuea-kyc",
+  KYC_UPLOAD_DIR: "/tmp/rwa-kit-kyc",
   STELLAR_NETWORK: "testnet",
   STELLAR_HORIZON_URL: "https://horizon-testnet.stellar.org",
   STELLAR_RPC_URL: "https://soroban-testnet.stellar.org",
@@ -213,23 +213,23 @@ describe("Environment Validation Module", () => {
       const parsed = validateApiEnv({
         ...VALID_API_ENV,
         CORS_ALLOWED_ORIGINS:
-          " https://app.akkuea.com, https://land.akkuea.com ,,http://localhost:3000",
+          " https://app.stellar-rwa-kit.example, https://ops.stellar-rwa-kit.example ,,http://localhost:3000",
       });
       expect(parsed.CORS_ALLOWED_ORIGINS).toEqual([
-        "https://app.akkuea.com",
-        "https://land.akkuea.com",
+        "https://app.stellar-rwa-kit.example",
+        "https://ops.stellar-rwa-kit.example",
         "http://localhost:3000",
       ]);
     });
 
     it("rejects CORS_ALLOWED_ORIGINS entries that are not exact origins", () => {
       for (const value of [
-        "https://app.akkuea.com/",
-        "https://app.akkuea.com/path",
+        "https://app.stellar-rwa-kit.example/",
+        "https://app.stellar-rwa-kit.example/path",
         "*",
-        "https://*.akkuea.com",
-        "app.akkuea.com",
-        "https://app.akkuea.com,ftp://files.akkuea.com",
+        "https://*.stellar-rwa-kit.example",
+        "app.stellar-rwa-kit.example",
+        "https://app.stellar-rwa-kit.example,ftp://files.stellar-rwa-kit.example",
       ]) {
         expect(() =>
           validateApiEnv({ ...VALID_API_ENV, CORS_ALLOWED_ORIGINS: value }),
@@ -240,21 +240,31 @@ describe("Environment Validation Module", () => {
 
   describe("CORS allowed origin helpers", () => {
     it("accepts exact origins and rejects anything else", () => {
-      expect(isExactOrigin("https://app.akkuea.com")).toBe(true);
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example")).toBe(true);
       expect(isExactOrigin("http://localhost:3000")).toBe(true);
-      expect(isExactOrigin("https://app.akkuea.com:8443")).toBe(true);
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example:8443")).toBe(
+        true,
+      );
       expect(isExactOrigin("")).toBe(false);
       expect(isExactOrigin("null")).toBe(false);
-      expect(isExactOrigin("app.akkuea.com")).toBe(false);
-      expect(isExactOrigin("https://app.akkuea.com/")).toBe(false);
-      expect(isExactOrigin("https://app.akkuea.com/path")).toBe(false);
-      expect(isExactOrigin("https://app.akkuea.com?x=1")).toBe(false);
-      expect(isExactOrigin("https://user:pass@app.akkuea.com")).toBe(false);
-      expect(isExactOrigin("https://app.akkuea.com:443")).toBe(false);
-      expect(isExactOrigin("https://App.Akkuea.com")).toBe(false);
+      expect(isExactOrigin("app.stellar-rwa-kit.example")).toBe(false);
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example/")).toBe(false);
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example/path")).toBe(
+        false,
+      );
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example?x=1")).toBe(
+        false,
+      );
+      expect(
+        isExactOrigin("https://user:pass@app.stellar-rwa-kit.example"),
+      ).toBe(false);
+      expect(isExactOrigin("https://app.stellar-rwa-kit.example:443")).toBe(
+        false,
+      );
+      expect(isExactOrigin("https://App.Stellar-Rwa-Kit.example")).toBe(false);
       expect(isExactOrigin("*")).toBe(false);
-      expect(isExactOrigin("https://*.akkuea.com")).toBe(false);
-      expect(isExactOrigin("ws://app.akkuea.com")).toBe(false);
+      expect(isExactOrigin("https://*.stellar-rwa-kit.example")).toBe(false);
+      expect(isExactOrigin("ws://app.stellar-rwa-kit.example")).toBe(false);
     });
 
     it("splits and trims an origin list, dropping empty entries", () => {
@@ -276,10 +286,9 @@ describe("Environment Validation Module", () => {
       ).toBe(false);
     });
 
-    it("defaults to the local frontends in development only", () => {
+    it("defaults to the local webapp in development only", () => {
       expect(DEFAULT_DEV_CORS_ALLOWED_ORIGINS).toEqual([
         "http://localhost:3000",
-        "http://localhost:3002",
       ]);
       expect(resolveCorsAllowedOrigins([], "development")).toEqual([
         ...DEFAULT_DEV_CORS_ALLOWED_ORIGINS,
@@ -292,7 +301,7 @@ describe("Environment Validation Module", () => {
     });
 
     it("uses a configured list as-is in every environment", () => {
-      const configured = ["https://app.akkuea.com"];
+      const configured = ["https://app.stellar-rwa-kit.example"];
       expect(resolveCorsAllowedOrigins(configured, "production")).toEqual(
         configured,
       );

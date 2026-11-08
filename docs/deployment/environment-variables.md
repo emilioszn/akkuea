@@ -2,7 +2,7 @@
 
 **Source of truth:** `apps/api/.env.example`
 
-This document lists every environment variable required to run the Akkuea platform. All variables come directly from the `.env.example` file. Any variable not listed here does not exist in the codebase and should not be referenced.
+This document lists every environment variable required to run Stellar RWA Kit. All variables come directly from the `.env.example` file. Any variable not listed here does not exist in the codebase and should not be referenced.
 
 > **Note on previous documentation:** `docs/api/overview.md` referenced `JWT_SECRET`, `KYC_PROVIDER_API_KEY`, `API_HOST`, and `API_PORT`. None of these exist in `.env.example` or the codebase. Ignore them.
 
@@ -23,7 +23,7 @@ cp apps/api/.env.example apps/api/.env
 
 | Variable            | Example Value                                           | Required              | Description                                               |
 | ------------------- | ------------------------------------------------------- | --------------------- | --------------------------------------------------------- |
-| `DATABASE_URL`      | `postgresql://user:password@localhost:5432/akkuea_defi` | Yes                   | Full PostgreSQL connection string                         |
+| `DATABASE_URL`      | `postgresql://user:password@localhost:5432/rwa_kit` | Yes                   | Full PostgreSQL connection string                         |
 | `DATABASE_POOL_MAX` | `10`                                                    | No (default: `10`)    | Max connections in the pool                               |
 | `DATABASE_SSL`      | `false`                                                 | No (default: `false`) | Enable SSL for DB connection. Set to `true` in production |
 
@@ -53,11 +53,11 @@ The API answers cross-origin browser requests only from the origins listed in `C
 
 | Variable               | Example Value                                    | Required                                       | Description                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------ | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CORS_ALLOWED_ORIGINS` | `https://app.akkuea.com,https://land.akkuea.com` | Yes (production, when a browser calls the API) | Comma-separated list of exact origins allowed to call the API from a browser. Entries are trimmed and empty entries dropped. Each entry must be an `http` or `https` origin written exactly as a browser sends it: scheme, lower-case host, and an optional non-default port, with no path, trailing slash, query, credentials, or wildcard. An invalid entry fails startup validation |
+| `CORS_ALLOWED_ORIGINS` | `https://app.stellar-rwa-kit.example,https://ops.stellar-rwa-kit.example` | Yes (production, when a browser calls the API) | Comma-separated list of exact origins allowed to call the API from a browser. Entries are trimmed and empty entries dropped. Each entry must be an `http` or `https` origin written exactly as a browser sends it: scheme, lower-case host, and an optional non-default port, with no path, trailing slash, query, credentials, or wildcard. An invalid entry fails startup validation |
 
 Behavior when `CORS_ALLOWED_ORIGINS` is unset or empty:
 
-- **Development** (`NODE_ENV=development`, or `NODE_ENV` unset): the local frontends are allowed, `http://localhost:3000` (webapp) and `http://localhost:3002` (Akkuea Land, which `next dev` moves to 3002 under `bun run dev` because the webapp holds 3000 and the API 3001). If you start the frontends on other ports, set the variable explicitly.
+- **Development** (`NODE_ENV=development`, or `NODE_ENV` unset): the local webapp is allowed, `http://localhost:3000`. If you start the webapp on another port, or add another frontend, set the variable explicitly.
 - **Production**: no cross-origin requests are allowed, and the API logs a warning at startup. Server-to-server callers (such as the webapp's operations proxy) do not send an `Origin` header and are not affected.
 - **Test**: no cross-origin requests are allowed.
 
@@ -79,7 +79,7 @@ Transaction webhooks are signed as the lowercase or uppercase 64-character hexad
 
 | Variable         | Example Value             | Required | Description                                                                                                                    |
 | ---------------- | ------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `KYC_UPLOAD_DIR` | `/var/akkuea/kyc-uploads` | Yes      | Absolute path on the server where KYC document files are stored. The API process must have read/write access to this directory |
+| `KYC_UPLOAD_DIR` | `/var/rwa-kit/kyc-uploads` | Yes      | Absolute path on the server where KYC document files are stored. The API process must have read/write access to this directory |
 
 ### KYC Expiry Job
 

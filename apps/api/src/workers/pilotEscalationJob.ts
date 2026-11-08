@@ -80,7 +80,7 @@ export type PilotEscalationTickResult =
  * the pilot ally and proactively notifies an operator when two or more
  * consecutive expected reporting cycles have gone by without a recorded
  * `record_evidence` call, instead of leaving this as a passive dashboard
- * signal (see docs/strategy/product-brief.md).
+ * signal (see docs/overview.md).
  *
  * Structured after `kycExpiryJob.ts`: self-scheduling poll loop, no crash
  * on transient failure, disable via env.

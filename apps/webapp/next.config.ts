@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-import { parsePropertyImageHosts } from "@akkuea/shared";
+import { parsePropertyImageHosts } from "@stellar-rwa-kit/shared";
 
 // Validate webapp environment configuration on server boot
 import "./src/lib/env";

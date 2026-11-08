@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AlertTriangle, CheckCircle2, Wallet } from "lucide-react";
-import type { PilotSettlementCurrency } from "@akkuea/shared";
+import type { PilotSettlementCurrency } from "@stellar-rwa-kit/shared";
 import { Badge, Button, Card, Toggle } from "@/components/ui";
 import { useWallet } from "@/components/auth/hooks";
 import { setCurrencyPreference, type SignXdr } from "@/services/pilot/writes";

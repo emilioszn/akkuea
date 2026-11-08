@@ -16,7 +16,7 @@ import {
   CardContent,
   Button,
 } from "@/components/ui";
-import type { TransactionFilter } from "@akkuea/shared";
+import type { TransactionFilter } from "@stellar-rwa-kit/shared";
 import { useTransactions } from "@/hooks/useTransactions";
 import { TransactionRow } from "./TransactionRow";
 import { useState } from "react";

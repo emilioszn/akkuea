@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { BrandLogo } from "@/components/layout";
 import { Button, Card, Input } from "@/components/ui";
-import { useGameWallet } from "@/components/auth/hooks";
+import { usePollarWallet } from "@/components/auth/hooks";
 import { cn } from "@/lib/utils";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 import { sanitizeCallbackUrl } from "@/lib/sanitizeCallbackUrl";
@@ -29,7 +29,7 @@ export default function LoginPage() {
     () => sanitizeCallbackUrl(searchParams.get("callbackUrl")),
     [searchParams],
   );
-  const { isConnected, isConnecting, authError, login } = useGameWallet();
+  const { isConnected, isConnecting, authError, login } = usePollarWallet();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState<string | null>(null);
   const [pendingAction, setPendingAction] = useState<
@@ -92,7 +92,7 @@ export default function LoginPage() {
               </p>
 
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                Jump into Akkuea without a setup detour.
+                Jump in without a setup detour.
               </h1>
 
               <p className="max-w-lg text-sm leading-6 text-neutral-400 sm:text-base">
@@ -229,7 +229,7 @@ export default function LoginPage() {
               ) : null}
 
               <p className="mt-5 text-xs leading-5 text-neutral-500">
-                By continuing, you’ll return to the game where you left off.
+                By continuing, you’ll return to where you left off.
               </p>
             </Card>
           </motion.section>

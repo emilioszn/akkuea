@@ -164,13 +164,10 @@ export const propertyImageHostsSchema = z
 
 /**
  * Browser origins the API accepts cross-origin requests from in development
- * when `CORS_ALLOWED_ORIGINS` is unset: the webapp (`next dev` on 3000) and
- * Akkuea Land (`next dev`, which takes 3002 under `bun run dev` because the
- * webapp holds 3000 and the API 3001).
+ * when `CORS_ALLOWED_ORIGINS` is unset: the webapp (`next dev` on 3000).
  */
 export const DEFAULT_DEV_CORS_ALLOWED_ORIGINS: readonly string[] = [
   "http://localhost:3000",
-  "http://localhost:3002",
 ];
 
 /**

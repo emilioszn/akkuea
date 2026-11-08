@@ -1,7 +1,7 @@
 # Runbook: Pilot Emergency Pause
 
 **Severity:** High
-**Audience:** Platform admin (Akkuea), for all three pilot contracts
+**Audience:** Platform admin, for all three pilot contracts
 **Applies to:** `pilot-whitelist`, `pilot-income-token`, `pilot-payout-split`
 **Contract sources:**
 
@@ -232,5 +232,5 @@ stellar contract invoke \
 - [`docs/operations/runbook-pilot-admin-rotation.md`](runbook-pilot-admin-rotation.md)
 - [`docs/operations/runbook-pilot-contract-migration.md`](runbook-pilot-contract-migration.md)
 - [`docs/operations/runbook-emergency-pause.md`](runbook-emergency-pause.md) - the `defi-rwa` equivalent (different contract, 24-hour timelock, do not confuse the two)
-- [`docs/strategy/decision-log.md`](../strategy/decision-log.md)
+- [`docs/decisions/decision-log.md`](../decisions/decision-log.md)
 - [`docs/deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md)

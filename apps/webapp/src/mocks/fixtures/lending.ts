@@ -2,10 +2,10 @@ import type {
   LendingPool,
   DepositPosition,
   BorrowPosition,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 const MOCK_USER_ADDRESS =
-  "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000";
+  "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000";
 
 export const mockLendingPools: LendingPool[] = [
   {

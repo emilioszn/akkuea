@@ -1,5 +1,5 @@
-import type { PropertyInfo } from '@akkuea/shared';
-import { NotFoundError, ValidationError } from '@akkuea/shared';
+import type { PropertyInfo } from '@stellar-rwa-kit/shared';
+import { NotFoundError, ValidationError } from '@stellar-rwa-kit/shared';
 import { logger } from '../services/logger';
 import {
   propertyRepository,

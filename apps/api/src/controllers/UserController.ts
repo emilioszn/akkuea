@@ -1,4 +1,4 @@
-import type { User, Transaction, PropertyInfo } from '@akkuea/shared';
+import type { User, Transaction, PropertyInfo } from '@stellar-rwa-kit/shared';
 import type { User as UserRow } from '../db/schema';
 import type { AuthContext } from '../middleware/auth';
 import { userRepository } from '../repositories/UserRepository';

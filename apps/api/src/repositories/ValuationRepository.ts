@@ -1,5 +1,5 @@
 import { desc, eq } from 'drizzle-orm';
-import type { ValuationRecord } from '@akkuea/shared';
+import type { ValuationRecord } from '@stellar-rwa-kit/shared';
 import { db } from '../db';
 import { valuations } from '../db/schema/valuations';
 

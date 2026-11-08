@@ -10,8 +10,8 @@ import {
   mock,
 } from "bun:test";
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from "react";
-import type { LendingPool } from "@akkuea/shared";
-import { createLendingPool } from "@akkuea/shared";
+import type { LendingPool } from "@stellar-rwa-kit/shared";
+import { createLendingPool } from "@stellar-rwa-kit/shared";
 import { lendingApi } from "@/services/api";
 
 mock.module("framer-motion", () => {

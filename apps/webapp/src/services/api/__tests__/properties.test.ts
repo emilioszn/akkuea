@@ -1,12 +1,12 @@
 import { describe, it, expect, beforeEach, mock } from "bun:test";
 import { propertyApi } from "../properties";
 import { setupMockFetch, wrapFetchMock } from "./helpers";
-import type { ShareOwnership } from "@akkuea/shared";
+import type { ShareOwnership } from "@stellar-rwa-kit/shared";
 import {
   VALID_STELLAR_ADDRESS,
   VALID_UUID,
   createProperty,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 describe("Property API", () => {
   beforeEach(() => {

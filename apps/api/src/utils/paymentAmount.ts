@@ -1,4 +1,4 @@
-import { formatBigIntAsDecimalString, parseDecimalStringToBigInt } from '@akkuea/shared';
+import { formatBigIntAsDecimalString, parseDecimalStringToBigInt } from '@stellar-rwa-kit/shared';
 
 /**
  * Conversion between the `properties.pricePerShare` column and the units the

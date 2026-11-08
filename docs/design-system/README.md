@@ -1,4 +1,4 @@
-# Akkuea Design System
+# Stellar RWA Kit Design System
 
 This documents the visual and interaction system actually implemented in [`apps/webapp`](../../apps/webapp) - extracted from the running code (`src/app/globals.css`, `src/context/ThemeContext.tsx`, `src/components/ui/`), not a separate aspirational spec. If the code and this document ever disagree, the code is correct and this document is stale - update it.
 
@@ -14,7 +14,7 @@ The implemented system reads as **terminal / monospace-technical**, not a generi
 
 ## What "auditable" looks like in this system
 
-The pilot's central credibility claim (see [`../strategy/product-brief.md`](../strategy/product-brief.md)) is that trust is visible and auditable, not asserted. That has direct design consequences documented in [`components.md`](components.md):
+The income distribution module's central credibility claim (see [`../overview.md`](../overview.md)) is that trust is visible and auditable, not asserted. That has direct design consequences documented in [`components.md`](components.md):
 
 - Status is always shown as a small, explicit, textual/iconic state (see `FreshnessIndicator`, `.status-dot`) - never implied only by color.
 - Multi-step flows (whitelist review, evidence review, payout cycles) use the `Stepper` component to show progress against an explicit sequence, not just a spinner.

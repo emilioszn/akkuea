@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { propertyApi } from "@/services/api/properties";
 import { useLiveUpdates, type ConnectionStatus } from "@/hooks/useLiveUpdates";
 import { useAsyncState } from "@/hooks/useAsyncState";

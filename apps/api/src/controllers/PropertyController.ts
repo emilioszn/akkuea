@@ -1,4 +1,4 @@
-import type { PropertyInfo, ShareOwnership as SharedShareOwnership } from '@akkuea/shared';
+import type { PropertyInfo, ShareOwnership as SharedShareOwnership } from '@stellar-rwa-kit/shared';
 import {
   ValidationError,
   NotFoundError,
@@ -7,7 +7,7 @@ import {
   ConflictError,
   parseDecimalStringToBigInt,
   formatBigIntAsDecimalString,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 import { and, eq, gte, sql } from 'drizzle-orm';
 import { logger } from '../services/logger';
 import { db } from '../db';

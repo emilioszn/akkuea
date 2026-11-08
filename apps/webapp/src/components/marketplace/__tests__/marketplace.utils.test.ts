@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import { existsSync } from "node:fs";
 import path from "node:path";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import {
   filterAndSortProperties,
   getPropertyImage,

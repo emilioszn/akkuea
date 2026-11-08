@@ -3,7 +3,7 @@ import { Elysia } from 'elysia';
 import { kycRoutes } from '../routes/kyc';
 import { adminRoutes } from '../routes/admin';
 import { errorHandler } from '../middleware/errorHandler';
-import { VALID_UUID } from '@akkuea/shared';
+import { VALID_UUID } from '@stellar-rwa-kit/shared';
 import { userRepository } from '../repositories/UserRepository';
 import jwt from 'jsonwebtoken';
 

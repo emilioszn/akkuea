@@ -45,7 +45,7 @@ proptest! {
         token.initialize(
             &admin,
             &whitelist_id,
-            &String::from_str(&env, "Akkuea Pilot Income"),
+            &String::from_str(&env, "Sample Income Token"),
             &String::from_str(&env, "AKIN"),
             &7,
         );

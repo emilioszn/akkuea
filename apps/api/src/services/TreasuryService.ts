@@ -5,7 +5,7 @@ import {
   DefindexVaultError,
   toDefindexVaultError,
   type CurrentAssetInvestmentAllocation,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 import { ApiError } from '../errors/ApiError';
 import {
   getConfiguredTreasuryVenues,

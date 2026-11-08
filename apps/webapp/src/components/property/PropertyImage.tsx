@@ -2,7 +2,7 @@
 
 import { useState, type SyntheticEvent } from "react";
 import Image, { type ImageProps } from "next/image";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import {
   getPropertyImage,
   PROPERTY_IMAGE_PLACEHOLDER,

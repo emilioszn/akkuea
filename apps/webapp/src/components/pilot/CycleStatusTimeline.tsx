@@ -5,7 +5,7 @@ import { AlertTriangle, CalendarClock, FileWarning } from "lucide-react";
 import type {
   PilotCycleTimeline,
   PilotCycleTimelineEntry,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import type { ConnectionStatus } from "@/hooks/useLiveUpdates";
 import {
   Card,

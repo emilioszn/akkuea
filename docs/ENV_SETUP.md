@@ -1,6 +1,6 @@
 # Environment Variable Setup Guide
 
-This guide provides concrete, step-by-step instructions for obtaining real development values for every environment variable used in the Akkuea monorepo (`apps/api` and `apps/webapp`).
+This guide provides concrete, step-by-step instructions for obtaining real development values for every environment variable used in the Stellar RWA Kit monorepo (`apps/api` and `apps/webapp`).
 
 > **SECURITY WARNING**
 > Never commit real secret credentials, private keys, or production tokens to version control. All `.env` files are ignored by git (`.gitignore`). Every example in this document uses placeholder syntax or commands to generate local dev credentials.
@@ -36,9 +36,9 @@ To set up your local development environment:
     docker compose -f docker-compose.dev.yml up -d
     ```
   - Standard local development connection string:
-    `postgresql://user:password@localhost:5432/akkuea_defi`
+    `postgresql://user:password@localhost:5432/rwa_kit`
   - For local integration tests / CI:
-    `postgresql://test:test@localhost:5432/akkuea_test` (run via `docker run -d --name akkuea-pg-test -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -e POSTGRES_DB=akkuea_test -p 5432:5432 postgres:16`)
+    `postgresql://test:test@localhost:5432/rwa_kit_test` (run via `docker run -d --name rwa-kit-pg-test -e POSTGRES_USER=test -e POSTGRES_PASSWORD=test -e POSTGRES_DB=rwa_kit_test -p 5432:5432 postgres:16`)
 
 #### `DATABASE_POOL_MAX`
 - **Required**: No (default: `10`)
@@ -118,7 +118,7 @@ To set up your local development environment:
 #### `KYC_UPLOAD_DIR`
 - **Required**: Yes
 - **Consumer**: `apps/api`
-- **Where to get a value for local development**: Specify any absolute path to a writable directory on your computer (e.g. `./uploads` or `/tmp/akkuea-kyc`).
+- **Where to get a value for local development**: Specify any absolute path to a writable directory on your computer (e.g. `./uploads` or `/tmp/rwa-kit-kyc`).
 - **Production Note**: Must point to an isolated, non-public directory with strict operating system access controls.
 
 #### `KYC_EXPIRY_JOB_ENABLED`
@@ -249,7 +249,7 @@ To set up your local development environment:
 #### `REAL_ESTATE_TOKEN_CONTRACT_ID`
 - **Required**: Optional override (defaults to `apps/shared/src/contracts.testnet.json`)
 - **Consumer**: `apps/api`
-- **Where to get a value for local development**: Leave unset to use the standard testnet deployment in `@akkuea/shared`. If deploying custom contracts locally, copy the contract ID (starts with `C`, 56 characters) output from:
+- **Where to get a value for local development**: Leave unset to use the standard testnet deployment in `@stellar-rwa-kit/shared`. If deploying custom contracts locally, copy the contract ID (starts with `C`, 56 characters) output from:
   ```bash
   bun run deploy:contracts
   ```

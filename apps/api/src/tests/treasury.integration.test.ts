@@ -22,7 +22,7 @@
  */
 import { describe, expect, test } from 'bun:test';
 import { Keypair } from '@stellar/stellar-sdk';
-import { DefindexVaultContractClient, DefindexVaultError } from '@akkuea/shared';
+import { DefindexVaultContractClient, DefindexVaultError } from '@stellar-rwa-kit/shared';
 import { getTreasuryVenue, type TreasuryVenueId } from '../config/treasury';
 import { mapVaultErrorToApiError } from '../services/TreasuryService';
 

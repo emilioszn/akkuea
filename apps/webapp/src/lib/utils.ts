@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { STELLAR_NETWORKS } from "@akkuea/shared";
+import { STELLAR_NETWORKS } from "@stellar-rwa-kit/shared";
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs);

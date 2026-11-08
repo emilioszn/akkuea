@@ -28,7 +28,7 @@ if (process.env.NEXT_PUBLIC_SMART_ACCOUNT_RPC_URL) {
       accountWasmHash: process.env.NEXT_PUBLIC_SMART_ACCOUNT_WASM_HASH ?? "",
       webauthnVerifierAddress:
         process.env.NEXT_PUBLIC_SMART_ACCOUNT_VERIFIER_ADDRESS ?? "",
-      appName: "Akkuea",
+      appName: "Stellar RWA Kit",
     }),
   );
 }
@@ -62,7 +62,7 @@ export function Providers({ children }: ProvidersProps) {
         client={{
           apiKey: publishableKey,
           stellarNetwork: "testnet",
-          deviceLabel: "Akkuea web",
+          deviceLabel: "Stellar RWA Kit web",
         }}
       >
         <ThemeProvider>

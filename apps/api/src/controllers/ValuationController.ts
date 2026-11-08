@@ -2,7 +2,7 @@ import type {
   RealEstateValuationPayload,
   ValuationRecord,
   ContractValuationPayload,
-} from '@akkuea/shared';
+} from '@stellar-rwa-kit/shared';
 import { OracleService } from '../services/OracleService';
 
 export class ValuationController {

@@ -1,4 +1,4 @@
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import type { PaginatedResponse } from "@/services/api/types";
 
 /** Realistic mock wallet addresses (Stellar G... format) */

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import type { BorrowPosition } from "@akkuea/shared";
+import type { BorrowPosition } from "@stellar-rwa-kit/shared";
 
 export type HealthFactorStatus = "safe" | "warning" | "critical" | "none";
 

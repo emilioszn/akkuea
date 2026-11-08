@@ -17,7 +17,7 @@ import {
   TreasuryService,
   type VaultClient,
 } from '../services/TreasuryService';
-import { DefindexVaultError, toDefindexVaultError } from '@akkuea/shared';
+import { DefindexVaultError, toDefindexVaultError } from '@stellar-rwa-kit/shared';
 import { ApiError } from '../errors/ApiError';
 import type { TreasuryVenue } from '../config/treasury';
 import { TreasuryRepository } from '../repositories/TreasuryRepository';
@@ -415,7 +415,7 @@ describe('TreasuryService movements', () => {
     const result = await service.deposit({
       venue: 'defindex-blend',
       amount: 10,
-      requestedBy: 'ops@akkuea',
+      requestedBy: 'ops@rwa-kit',
     });
 
     expect(capturedArgs).toMatchObject({
@@ -440,7 +440,7 @@ describe('TreasuryService movements', () => {
     );
 
     await expect(
-      service.deposit({ venue: 'defindex-blend', amount: 10, requestedBy: 'ops@akkuea' }),
+      service.deposit({ venue: 'defindex-blend', amount: 10, requestedBy: 'ops@rwa-kit' }),
     ).rejects.toMatchObject({ statusCode: 503, code: 'TREASURY_VENUE_PAUSED' });
 
     const calls = (TreasuryRepository.recordTransaction as ReturnType<typeof mock>).mock.calls;
@@ -476,7 +476,7 @@ describe('TreasuryService movements', () => {
     const result = await service.withdraw({
       venue: 'defindex-blend',
       amount: 100,
-      requestedBy: 'ops@akkuea',
+      requestedBy: 'ops@rwa-kit',
     });
 
     // 100 USDC at a share price of 2.0 is 50 shares.
@@ -504,7 +504,7 @@ describe('TreasuryService movements', () => {
     await service.withdraw({
       venue: 'defindex-blend',
       amount: 0.0000005,
-      requestedBy: 'ops@akkuea',
+      requestedBy: 'ops@rwa-kit',
     });
 
     // 3 * 5 / 7 = 2.14…, which must round up to 3 rather than down to 2.
@@ -518,7 +518,7 @@ describe('TreasuryService movements', () => {
     );
 
     await expect(
-      service.withdraw({ venue: 'defindex-blend', amount: 500, requestedBy: 'ops@akkuea' }),
+      service.withdraw({ venue: 'defindex-blend', amount: 500, requestedBy: 'ops@rwa-kit' }),
     ).rejects.toMatchObject({
       statusCode: 409,
       code: 'TREASURY_INSUFFICIENT_VENUE_LIQUIDITY',
@@ -533,7 +533,7 @@ describe('TreasuryService movements', () => {
         venue: 'defindex-blend',
         amount: 10,
         slippageBps: 5000,
-        requestedBy: 'ops@akkuea',
+        requestedBy: 'ops@rwa-kit',
       }),
     ).rejects.toMatchObject({ statusCode: 400 });
   });
@@ -544,7 +544,7 @@ describe('TreasuryService movements', () => {
     const service = new TreasuryService(() => fakeVaultClient(), noopAudit());
 
     await expect(
-      service.deposit({ venue: 'defindex-blend', amount: 10, requestedBy: 'ops@akkuea' }),
+      service.deposit({ venue: 'defindex-blend', amount: 10, requestedBy: 'ops@rwa-kit' }),
     ).rejects.toMatchObject({
       statusCode: 503,
       code: 'TREASURY_SOURCE_NOT_CONFIGURED',

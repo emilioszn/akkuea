@@ -1,6 +1,6 @@
 # Local Development Setup Guide
 
-This guide provides step-by-step instructions to set up the Akkuea development environment on your local machine.
+This guide provides step-by-step instructions to set up the Stellar RWA Kit development environment on your local machine.
 
 ## Prerequisites
 
@@ -34,8 +34,8 @@ Required only if you intend to work on smart contracts.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/akkuea/akkuea.git
-cd akkuea
+git clone https://github.com/emilioszn/stellar-rwa-kit.git
+cd stellar-rwa-kit
 ```
 
 ### 2. Install Dependencies
@@ -58,7 +58,7 @@ cp apps/api/.env.example apps/api/.env
 
 **Key Variables in `apps/api/.env`:**
 
-- `DATABASE_URL`: Connection string for PostgreSQL (default: `postgresql://user:password@localhost:5432/akkuea_defi`).
+- `DATABASE_URL`: Connection string for PostgreSQL (default: `postgresql://user:password@localhost:5432/rwa_kit`).
 - `PORT`: The port on which the API will run (default: `3001`).
 - `OPERATIONS_BACKEND_CREDENTIAL`: A secret key used for internal admin operations. **Must match the value in `apps/webapp/.env`**.
 - `REDIS_URL`: (Optional) Connection string for Redis caching (`redis://localhost:6379`).
@@ -115,12 +115,6 @@ cd apps/api && bun run dev
 
 ```bash
 cd apps/webapp && bun run dev
-```
-
-**Run Akkuea Land (Game):**
-
-```bash
-cd apps/akkuea-land && bun run dev
 ```
 
 ---

@@ -1,6 +1,6 @@
 import { afterAll, beforeEach, describe, expect, it, mock } from "bun:test";
-import type { PaginatedTransactionResponse } from "@akkuea/shared";
-import { VALID_TX_HASH, createTransaction } from "@akkuea/shared";
+import type { PaginatedTransactionResponse } from "@stellar-rwa-kit/shared";
+import { VALID_TX_HASH, createTransaction } from "@stellar-rwa-kit/shared";
 import { transactionsApi } from "@/services/api";
 
 const STELLAR_EXPERT_BASE = "https://stellar.expert/explorer/testnet/tx";

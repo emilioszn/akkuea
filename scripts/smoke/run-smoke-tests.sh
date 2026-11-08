@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Post-deploy smoke tests for Akkuea (API happy-path).
+# Post-deploy smoke tests for Stellar RWA Kit (API happy-path).
 # See scripts/smoke/README.md for env configuration.
 set -euo pipefail
 
@@ -81,7 +81,7 @@ except Exception as e:
   return 1
 }
 
-echo "=== Akkuea smoke tests ==="
+echo "=== Stellar RWA Kit smoke tests ==="
 echo "API_BASE_URL=$API_BASE_URL"
 echo "TIMEOUT=${TIMEOUT_SECS}s"
 echo

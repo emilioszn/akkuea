@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from "@akkuea/shared";
+import { API_ENDPOINTS } from "@stellar-rwa-kit/shared";
 import {
   Networks,
   TransactionBuilder,

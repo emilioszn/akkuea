@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test";
-import type { DistributionSummary } from "@akkuea/shared";
+import type { DistributionSummary } from "@stellar-rwa-kit/shared";
 
 /**
- * These tests mock `@akkuea/shared`'s generated contract clients at the
+ * These tests mock `@stellar-rwa-kit/shared`'s generated contract clients at the
  * module boundary, the same way `stellar-wallets-kit.provider.test.ts`
  * mocks the wallet kit: `cosign.ts` only ever talks to the payout contract
  * through `PilotPayoutSplitClient`/`PilotIncomeTokenClient`, so controlling
@@ -223,8 +223,8 @@ let mockIncomeHolders: string[] = [];
  * `PilotWhitelistClient`, `STELLAR_NETWORKS`) from test files that run after
  * this one.
  */
-const RealShared = await import("@akkuea/shared");
-mock.module("@akkuea/shared", () => ({
+const RealShared = await import("@stellar-rwa-kit/shared");
+mock.module("@stellar-rwa-kit/shared", () => ({
   ...RealShared,
   buildContractClientOptions: (config: unknown) => config,
   PilotPayoutSplitClient: class {

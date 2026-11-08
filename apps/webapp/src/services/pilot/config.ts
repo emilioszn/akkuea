@@ -1,4 +1,4 @@
-import { CONTRACT_IDS, API_ENDPOINTS } from "@akkuea/shared";
+import { CONTRACT_IDS, API_ENDPOINTS } from "@stellar-rwa-kit/shared";
 import { Networks } from "@stellar/stellar-sdk";
 
 /**
@@ -124,7 +124,7 @@ export class PilotAllyNotConfiguredError extends Error {
 /**
  * The pilot's ally address, a term of the operator/ally agreement rather
  * than a property of the software: the pilot is, by design, a single ally
- * relationship (see docs/strategy/product-brief.md), and
+ * relationship (see docs/overview.md), and
  * `pilot-payout-split` stores its `Ally` address at initialization with no
  * corresponding public getter. Needed wherever a two-signer invocation
  * (`execute_distribution`, `record_evidence`, `exit`) is prepared, since the
@@ -144,7 +144,7 @@ export function pilotAllyAddress(): string {
  * Base URL of the public network explorer for the configured network.
  *
  * Payout history links here so an investor can inspect the contract's stored
- * state on a source Akkuea does not control, rather than trusting the
+ * state on a source the platform does not control, rather than trusting the
  * dashboard's rendering of it.
  */
 export function pilotExplorerBaseUrl(): string {

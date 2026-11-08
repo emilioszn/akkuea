@@ -1,7 +1,7 @@
 {
-  "name": "@akkuea/api",
+  "name": "@stellar-rwa-kit/api",
   "version": "1.0.0",
-  "description": "Backend API for Akkuea platform",
+  "description": "Backend API for Stellar RWA Kit",
   "module": "src/index.ts",
   "type": "module",
   "private": true,
@@ -21,7 +21,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@akkuea/shared": "workspace:*",
+    "@stellar-rwa-kit/shared": "workspace:*",
     "@elysiajs/cors": "^1.4.1",
     "@elysiajs/jwt": "^1.4.2",
     "@elysiajs/swagger": "^1.3.1",

@@ -42,7 +42,7 @@ export const lendingHandlers = [
         poolId: params.poolId,
         depositor:
           request.headers.get("x-user-address") ||
-          "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000",
+          "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000",
         amount,
         shares: String(Number(amount) * 0.98),
         depositedAt: new Date().toISOString(),
@@ -69,7 +69,7 @@ export const lendingHandlers = [
         poolId: params.poolId,
         borrower:
           request.headers.get("x-user-address") ||
-          "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000",
+          "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000",
         principal: body.borrowAmount ?? "1000.00",
         accruedInterest: "0.00",
         collateralAmount: body.collateralAmount ?? "1500.00",
@@ -92,7 +92,7 @@ export const lendingHandlers = [
     async ({ request, params }) => {
       const userAddr =
         request.headers.get("x-user-address") ||
-        "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000";
+        "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000";
       const existing = mockDepositPositions.find(
         (d) => d.poolId === params.poolId && d.depositor === userAddr,
       );
@@ -108,7 +108,7 @@ export const lendingHandlers = [
     async ({ request, params }) => {
       const userAddr =
         request.headers.get("x-user-address") ||
-        "GDEMOUSER1234567890AKKUEA00000000000000000000000000000000";
+        "GDEMOUSER1234567890RWAKIT00000000000000000000000000000000";
       const existing = mockBorrowPositions.find(
         (b) => b.poolId === params.poolId && b.borrower === userAddr,
       );

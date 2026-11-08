@@ -1,10 +1,12 @@
 # Contract Deployment Records
 
-> **This document's step-by-step deployment instructions have been superseded** by [`docs/deployment/deploy-contracts.md`](../deployment/deploy-contracts.md) (the `defi-rwa` platform contract) and [`docs/deployment/deploy-game-contracts.md`](../deployment/deploy-game-contracts.md) (the four Akkuea Land game contracts) - use those for actually deploying. This document now keeps only what those two don't cover: the historical deployment records and the mainnet approval process, both still accurate and referenced elsewhere in this repo.
+> **This document's step-by-step deployment instructions have been superseded** by [`docs/deployment/deploy-contracts.md`](../deployment/deploy-contracts.md) (the `defi-rwa` contract) and [`docs/deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md) (the three income distribution contracts). Use those for actually deploying. This document keeps only what those two don't cover: the deployment records and the mainnet approval process.
+
+> The testnet records below are deployments made by the original Akkuea project, which this kit was extracted from. Deploy your own contracts and replace these records and the IDs in `apps/shared/src/contracts.testnet.json`.
 
 ## Where contract IDs live
 
-Deployed contract addresses are stored as JSON deployment artifacts at `apps/shared/src/contracts.testnet.json`, `apps/shared/src/contracts.mainnet.json`, and `apps/shared/src/contracts/game-contracts.testnet.json`. The shared `CONTRACT_IDS` constant (`apps/shared/src/constants/index.ts`) and the API (`apps/api/src/config/contracts.ts`) read contract IDs from these files, so recording a new deployment is a data change, not a code change.
+Deployed contract addresses are stored as JSON deployment artifacts at `apps/shared/src/contracts.testnet.json` and `apps/shared/src/contracts.mainnet.json`. The shared `CONTRACT_IDS` constant (`apps/shared/src/constants/index.ts`) and the API (`apps/api/src/config/contracts.ts`) read contract IDs from these files, so recording a new deployment is a data change, not a code change.
 
 ## Pilot Contracts Testnet Deployment Record (2026-08-18)
 
@@ -33,31 +35,6 @@ Explorer links:
 - USDC SAC: <https://stellar.expert/explorer/testnet/contract/CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA>
 
 Build, deployment, initialization, and verification commands: see [`docs/deployment/deploy-pilot-contracts.md`](../deployment/deploy-pilot-contracts.md).
-
-## Game Contracts Testnet Deployment Record (2026-06-24)
-
-All four Akkuea Land game contracts were built with `stellar contract build` (target `wasm32v1-none`) and deployed to Stellar testnet. Deployment order: PropertyNFT and LandToken first (no inter-dependencies), then GameMarketplace and GameEngine (both depend on the first two).
-
-- **Network**: testnet (`Test SDF Network ; September 2015`)
-- **Deployer / admin account**: `GCPRLG7MR6J4WL527RRZ6S55GDZQ7ZDIUB6EQTRX77ETVGFH6FFM2F4M`
-- **Deployed on**: 2026-06-24
-- **Source of truth**: [`apps/shared/src/contracts/game-contracts.testnet.json`](../../apps/shared/src/contracts/game-contracts.testnet.json)
-
-| Contract            | Contract ID                                                | Deploy tx                                                          | Init tx                                                            |
-| ------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `GAME_PROPERTY_NFT` | `CCPUVGQAMDUUASHMXB7Z6F6XHCZI2WXOPR7DXEVPJBEGYZVJEABEABLE` | `2b982bdbc7e29c7f334d35d57f9566d124fd9b30722f551fff23df310d298fc5` | `889d9a0f7da7c543cc6abeb913506eb55b6b31f67177c4d3f2fc18670c81bbb2` |
-| `GAME_LAND_TOKEN`   | `CBQBXOWI3YB5SFICLVPYHK2EL3SY3XIZUZA6QZIGGXDKMVXAT74IOR3K` | `3a7619ea0d637ac60f2d6c43dfac10cc7810c663b3ea65b84f54d7b1f07cbdf7` | `1e3d8961cce31d0d5016705ef1f8aecf78761ef1203136cb41ccc6c08729be53` |
-| `GAME_MARKETPLACE`  | `CDKRZTY5PFNA4DHI2GFPSTOAADI2WV7SXYVS4VMTDC6M7IKKIPQJP5A3` | `a84eabafffc0bf75bb75676c8add0616ff970cda82c75f2ebf439ca14528fbbb` | `4fbaa0df4a51c266fb3258490b202cd962209b04c495264d85096da5ef623560` |
-| `GAME_ENGINE`       | `CBTPPGX6LT2EPKR7JD7LLUB23E6HI5EFQRXKV3VQNZ6QWJTJ3EZ76RSH` | `fc8bcb20360d909ea4fbd7187edadadf3ed25f3aa29810e5b806917318d0cafa` | `33641f100f7c6d23452a417b2d4d16a111554398c69aa5cab969f224a98a7714` |
-
-Explorer links:
-
-- GAME_PROPERTY_NFT: <https://stellar.expert/explorer/testnet/contract/CCPUVGQAMDUUASHMXB7Z6F6XHCZI2WXOPR7DXEVPJBEGYZVJEABEABLE>
-- GAME_LAND_TOKEN: <https://stellar.expert/explorer/testnet/contract/CBQBXOWI3YB5SFICLVPYHK2EL3SY3XIZUZA6QZIGGXDKMVXAT74IOR3K>
-- GAME_MARKETPLACE: <https://stellar.expert/explorer/testnet/contract/CDKRZTY5PFNA4DHI2GFPSTOAADI2WV7SXYVS4VMTDC6M7IKKIPQJP5A3>
-- GAME_ENGINE: <https://stellar.expert/explorer/testnet/contract/CBTPPGX6LT2EPKR7JD7LLUB23E6HI5EFQRXKV3VQNZ6QWJTJ3EZ76RSH>
-
-Full initialization arguments and CLI verification commands: see [`docs/deployment/deploy-game-contracts.md`](../deployment/deploy-game-contracts.md).
 
 ## `defi-rwa` Testnet Deployment Record
 
@@ -111,10 +88,10 @@ Mainnet deployments are restricted and must be formally approved by:
    {
      "REAL_ESTATE_TOKEN": "C...",
      "DEFI_LENDING": "C...",
-     "GAME_ENGINE": "C...",
-     "GAME_LAND_TOKEN": "C...",
-     "GAME_PROPERTY_NFT": "C...",
-     "GAME_MARKETPLACE": "C..."
+     "PILOT_WHITELIST": "C...",
+     "PILOT_INCOME_TOKEN": "C...",
+     "PILOT_PAYOUT_SPLIT": "C...",
+     "USDC_TOKEN": "C..."
    }
    ```
 3. Commit the changes and open a pull request.

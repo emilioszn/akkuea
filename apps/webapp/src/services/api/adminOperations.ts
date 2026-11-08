@@ -1,4 +1,4 @@
-import type { PropertyInfo, ValuationRecord } from "@akkuea/shared";
+import type { PropertyInfo, ValuationRecord } from "@stellar-rwa-kit/shared";
 import type { PaginatedResponse } from "./types";
 
 export type OperationsQueue =

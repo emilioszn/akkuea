@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ClipboardCheck, ExternalLink, Flag, Hash, Wallet } from "lucide-react";
-import type { PilotEvidenceStatus } from "@akkuea/shared";
+import type { PilotEvidenceStatus } from "@stellar-rwa-kit/shared";
 import {
   Button,
   Card,

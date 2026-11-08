@@ -1,5 +1,5 @@
 """
-Akkuea shared design-system tokens for Graphviz diagrams.
+Shared design-system tokens for Graphviz diagrams.
 
 Every value below is copied directly from the real design tokens documented
 in docs/design-system/foundations.md (light theme, since diagrams render on

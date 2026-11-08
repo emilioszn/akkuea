@@ -1,14 +1,14 @@
 import { describe, it, expect, beforeEach, mock } from "bun:test";
 import { userApi } from "../users";
 import { setupMockFetch, wrapFetchMock } from "./helpers";
-import type { KycDocument, Transaction, User } from "@akkuea/shared";
+import type { KycDocument, Transaction, User } from "@stellar-rwa-kit/shared";
 import {
   VALID_STELLAR_ADDRESS,
   VALID_UUID,
   createUser,
   createTransaction,
   createKycDocument,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 describe("User API", () => {
   beforeEach(() => {

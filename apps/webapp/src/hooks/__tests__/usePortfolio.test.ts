@@ -14,7 +14,7 @@ import {
   createDepositPosition,
   createLendingPool,
   createProperty,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { lendingApi } from "@/services/api/lending";
 import { propertyApi } from "@/services/api/properties";
 import { userApi } from "@/services/api/users";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import type { PilotCycleStatus } from "@akkuea/shared";
+import type { PilotCycleStatus } from "@stellar-rwa-kit/shared";
 import { Badge } from "@/components/ui";
 
 /**

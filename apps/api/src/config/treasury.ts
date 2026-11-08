@@ -27,7 +27,7 @@ import { resolveNetworkKey } from './contracts';
  * `docs/operations/runbook-treasury-track.md` for the verification transcript.
  *
  * Mainnet has no committed defaults: DeFindex vaults on mainnet are deployed
- * per-partner through the factory, so akkuea's mainnet vault addresses must be
+ * per-partner through the factory, so your mainnet vault addresses must be
  * supplied through environment variables once that vault exists.
  */
 

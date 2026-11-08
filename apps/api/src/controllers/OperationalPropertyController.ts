@@ -1,5 +1,5 @@
-import type { PropertyInfo, ValuationRecord } from '@akkuea/shared';
-import { NotFoundError, ValidationError } from '@akkuea/shared';
+import type { PropertyInfo, ValuationRecord } from '@stellar-rwa-kit/shared';
+import { NotFoundError, ValidationError } from '@stellar-rwa-kit/shared';
 import { PropertyController } from './PropertyController';
 import { propertyRepository, type PropertyReviewStatus } from '../repositories/PropertyRepository';
 import { userRepository } from '../repositories/UserRepository';

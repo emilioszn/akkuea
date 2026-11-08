@@ -1,5 +1,5 @@
 """
-Akkuea - 07 Deployment Topology
+Stellar RWA Kit - 07 Deployment Topology
 Development (local machine, Stellar Testnet) versus Production (load-balanced
 services, Stellar Mainnet). Mirrors the Deployment Architecture section of
 docs/architecture/system-architecture.md.
@@ -15,7 +15,7 @@ g.attr(**base_graph_attr(
     splines="polyline",
     size="16,15",
     label=hl(
-        "Akkuea - Deployment Topology",
+        "Stellar RWA Kit - Deployment Topology",
         "Development (Stellar Testnet) vs Production (Stellar Mainnet)",
     ),
 ))
@@ -34,15 +34,13 @@ with g.subgraph(name="cluster_dev") as dev:
         margin="18",
     )
     dev.node("dev_webapp", hl("apps/webapp", "localhost:3000"), fillcolor=F_CLIENT, color=B_CLIENT)
-    dev.node("dev_land", hl("apps/akkuea-land"), fillcolor=F_CLIENT, color=B_CLIENT)
     dev.node("dev_api", hl("apps/api", "localhost:3001"), fillcolor=F_BACKEND, color=B_BACKEND, penwidth="2")
     dev.node("dev_db", hl("PostgreSQL + Redis", "docker-compose.dev.yml"), shape="cylinder",
               fillcolor=F_DB, color=B_DB)
-    dev.node("testnet", hl("Stellar Testnet", "defi-rwa + game-* + pilot contracts"),
+    dev.node("testnet", hl("Stellar Testnet", "defi-rwa + pilot-* contracts"),
               fillcolor=F_CONTRACT, color=B_CONTRACT, penwidth="2")
 
     dev.edge("dev_webapp", "dev_api", dir="both")
-    dev.edge("dev_land", "dev_api", dir="both")
     dev.edge("dev_api", "dev_db", dir="both")
     dev.edge("dev_api", "testnet", label="admin-signed", fontsize="9")
     dev.edge("dev_webapp", "testnet", label="wallet-signed", fontsize="9", style="dashed")
@@ -58,11 +56,11 @@ with g.subgraph(name="cluster_prod") as prod:
         penwidth="2.5",
         margin="18",
     )
-    prod.node("prod_fe", hl("Frontends", "Static / edge hosting"), fillcolor=F_CLIENT, color=B_CLIENT, penwidth="2")
+    prod.node("prod_fe", hl("Webapp", "Static / edge hosting"), fillcolor=F_CLIENT, color=B_CLIENT, penwidth="2")
     prod.node("prod_api", hl("API", "Load-balanced Elysia/Bun"), fillcolor=F_BACKEND, color=B_BACKEND, penwidth="2")
     prod.node("prod_db", hl("Managed PostgreSQL", "+ Redis (optional)"), shape="cylinder",
                fillcolor=F_DB, color=B_DB, penwidth="2")
-    prod.node("mainnet", hl("Stellar Mainnet", "defi-rwa + game-* deployed independently"),
+    prod.node("mainnet", hl("Stellar Mainnet", "defi-rwa + pilot-* deployed independently"),
                fillcolor=F_CONTRACT, color=B_CONTRACT, penwidth="2.5")
 
     prod.edge("prod_fe", "prod_api", dir="both", penwidth="2")

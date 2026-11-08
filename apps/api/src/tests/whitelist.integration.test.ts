@@ -19,7 +19,7 @@
  */
 import { describe, test, expect, afterAll, beforeEach } from 'bun:test';
 import { Keypair } from '@stellar/stellar-sdk';
-import { PilotWhitelistClient, type PilotWhitelistClientInterface } from '@akkuea/shared';
+import { PilotWhitelistClient, type PilotWhitelistClientInterface } from '@stellar-rwa-kit/shared';
 import { WhitelistService } from '../services/WhitelistService';
 import { db } from '../db';
 import { pilotWhitelistRequests } from '../db/schema/pilotWhitelist';

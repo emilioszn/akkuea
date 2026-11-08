@@ -1,10 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, spyOn, type Mock } from 'bun:test';
 import { Elysia } from 'elysia';
-import { DEFAULT_DEV_CORS_ALLOWED_ORIGINS } from '@akkuea/shared';
+import { DEFAULT_DEV_CORS_ALLOWED_ORIGINS } from '@stellar-rwa-kit/shared';
 import app from '../app';
 import { createCorsPlugin, readCorsAllowedOrigins } from '../middleware/cors';
 
-const ALLOWED_ORIGIN = 'https://app.akkuea.example';
+const ALLOWED_ORIGIN = 'https://app.rwa-kit.example';
 const EVIL_ORIGIN = 'https://evil.example';
 
 interface RequestHandler {
@@ -52,7 +52,7 @@ describe('CORS', () => {
     });
 
     it('does not match an allowed host on a different scheme or port', async () => {
-      for (const origin of ['http://app.akkuea.example', 'http://localhost:3001']) {
+      for (const origin of ['http://app.rwa-kit.example', 'http://localhost:3001']) {
         const response = await get(corsApp, origin);
         expect(response.headers.get('access-control-allow-origin')).toBeNull();
       }
@@ -130,9 +130,9 @@ describe('CORS', () => {
       expect(
         readCorsAllowedOrigins({
           NODE_ENV: 'production',
-          CORS_ALLOWED_ORIGINS: `${ALLOWED_ORIGIN}, https://land.akkuea.example`,
+          CORS_ALLOWED_ORIGINS: `${ALLOWED_ORIGIN}, https://ops.rwa-kit.example`,
         }),
-      ).toEqual([ALLOWED_ORIGIN, 'https://land.akkuea.example']);
+      ).toEqual([ALLOWED_ORIGIN, 'https://ops.rwa-kit.example']);
       expect(warnSpy).not.toHaveBeenCalled();
     });
 

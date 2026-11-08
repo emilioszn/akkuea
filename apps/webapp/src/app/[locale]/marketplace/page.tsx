@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   SlidersHorizontal,
 } from "lucide-react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { useWallet } from "@/components/auth/hooks";
 import { Footer, Navbar } from "@/components/layout";
 import { InvestModal } from "@/components/marketplace/InvestModal";

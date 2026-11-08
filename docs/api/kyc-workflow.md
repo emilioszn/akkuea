@@ -1,6 +1,6 @@
 # KYC Workflow: Off-Chain Compliance
 
-Akkuea's compliance layer is entirely off-chain. There are no whitelist addresses on the Soroban contract - investor eligibility is controlled through a state machine stored in PostgreSQL and enforced (or intended to be enforced) at the API layer.
+Stellar RWA Kit's compliance layer is entirely off-chain. There are no whitelist addresses on the Soroban contract - investor eligibility is controlled through a state machine stored in PostgreSQL and enforced (or intended to be enforced) at the API layer.
 
 **Key files:**
 
@@ -314,4 +314,3 @@ Repeat Step 3a for every document the user uploaded. The user-level status only 
 - `docs/api/minting-workflow.md` - how `property.verified` (separate from user KYC) gates tokenization
 - `docs/deployment/environment-variables.md` - `OPERATIONS_BACKEND_CREDENTIAL` and `OPERATIONS_ALLOWED_WALLETS`
 - Issue #725 - Audit Log Models & Compliance Export (pending - will expand the Audit & Compliance Logging section above)
-- Issue #722 - Dividend & Cashflow Distribution (pending - adds new investor payout workflows; see `docs/operations/runbook-dividends-placeholder.md`)

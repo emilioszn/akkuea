@@ -5,7 +5,7 @@ import {
   buildCycleTimeline,
   type PilotCycleTimeline,
   type PilotExitRecord,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import type { ConnectionStatus } from "@/hooks/useLiveUpdates";
 import {
   fetchPilotCycles,

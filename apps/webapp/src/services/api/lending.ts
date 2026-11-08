@@ -2,7 +2,7 @@ import type {
   LendingPool,
   DepositPosition,
   BorrowPosition,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { apiClient } from "./client";
 
 /**

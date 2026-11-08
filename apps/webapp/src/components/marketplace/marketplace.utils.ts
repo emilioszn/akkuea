@@ -1,4 +1,4 @@
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 
 export const MARKETPLACE_ALL_REGIONS = "All Regions";
 export const MARKETPLACE_ALL_TYPES = "All Types";

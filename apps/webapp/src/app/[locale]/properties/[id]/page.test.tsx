@@ -15,7 +15,7 @@ import {
   render,
   waitFor,
 } from "@testing-library/react";
-import type { PropertyInfo } from "@akkuea/shared";
+import type { PropertyInfo } from "@stellar-rwa-kit/shared";
 import { propertyApi } from "@/services/api/properties";
 
 const PROPERTY_ID = "550e8400-e29b-41d4-a716-446655440001";

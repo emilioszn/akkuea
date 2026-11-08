@@ -44,7 +44,7 @@ export function BrandLogo({
       >
         <Image
           src="/logo.png"
-          alt="Akkuea logo"
+          alt="Stellar RWA Kit logo"
           fill
           sizes="32px"
           className="object-contain p-1"
@@ -58,7 +58,7 @@ export function BrandLogo({
             textClassName,
           )}
         >
-          AKKUEA
+          RWA KIT
         </span>
       ) : null}
     </Link>

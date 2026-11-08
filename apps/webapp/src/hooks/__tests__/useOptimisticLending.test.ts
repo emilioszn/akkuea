@@ -14,14 +14,14 @@ import type {
   BorrowPosition,
   DepositPosition,
   LendingPool,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 
 import {
   VALID_STELLAR_ADDRESS,
   createBorrowPosition,
   createDepositPosition,
   createLendingPool,
-} from "@akkuea/shared";
+} from "@stellar-rwa-kit/shared";
 import { lendingApi } from "@/services/api";
 import { useLendingPools, type UserPositions } from "../useLendingPools";
 
